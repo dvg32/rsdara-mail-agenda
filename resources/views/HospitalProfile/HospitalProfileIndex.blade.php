@@ -42,7 +42,7 @@
                                     <div class="d-flex fs-6 fw-bold align-items-center mb-3">
                                         <div class="bullet bg-primary me-3"></div>
                                         <div class="text-gray-400">Surat Masuk</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">30</div>
+                                        <div class="ms-auto fw-bolder text-gray-700">25</div>
                                     </div>
                                     <!--end::Label-->
                                     <!--begin::Label-->
@@ -50,20 +50,6 @@
                                         <div class="bullet bg-success me-3"></div>
                                         <div class="text-gray-400">Surat Keluar</div>
                                         <div class="ms-auto fw-bolder text-gray-700">45</div>
-                                    </div>
-                                    <!--end::Label-->
-                                    <!--begin::Label-->
-                                    <div class="d-flex fs-6 fw-bold align-items-center mb-3">
-                                        <div class="bullet bg-danger me-3"></div>
-                                        <div class="text-gray-400">Surat Tidak Ditanggapi</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">0</div>
-                                    </div>
-                                    <!--end::Label-->
-                                    <!--begin::Label-->
-                                    <div class="d-flex fs-6 fw-bold align-items-center">
-                                        <div class="bullet bg-gray-300 me-3"></div>
-                                        <div class="text-gray-400">Surat Ditanggapi</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">25</div>
                                     </div>
                                     <!--end::Label-->
                                 </div>
