@@ -13,7 +13,7 @@ class OutgoingMailController extends Controller
      */
     public function index()
     {
-        //
+        return view('OutgoingMail.OutgoingMail');
     }
 
     /**
