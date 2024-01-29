@@ -3,10 +3,9 @@
 //     dateFormat: "Y-m-d",
 // });
 
-$("#tanggaljam").flatpickr({
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-    minuteIncrement: 1,
+$("#TanggalSuratMasuk").flatpickr({
+    
+    dateFormat: "d-m-Y",
     maxDate: "today",
     defaultDate: new Date()
 });

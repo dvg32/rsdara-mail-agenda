@@ -146,543 +146,295 @@
                     </div>
                     <!--end::Graph-->
                 </div>
-                <!--end::Col-->                
+                <!--end::Col-->
             </div>
-            <div class="card card-flush mt-6 mt-xl-6">
-                <!--begin::Card header-->
-                <div class="card-header mt-5">
-                    <!--begin::Card title-->
-                    <div class="card-title flex-column">
-                        <h3 class="fw-bolder mb-1">Project Spendings</h3>
-                        <div class="fs-6 text-gray-400">Total $260,300 sepnt so far</div>
-                    </div>
-                    <!--begin::Card title-->
-                    <!--begin::Card toolbar-->
-                    <div class="card-toolbar my-1">
-                        <!--begin::Select-->
-                        <div class="me-6 my-1">
-                            <select id="kt_filter_year" name="year" data-control="select2" data-hide-search="true"
-                                class="w-125px form-select form-select-solid form-select-sm select2-hidden-accessible"
-                                data-select2-id="select2-data-kt_filter_year" tabindex="-1" aria-hidden="true">
-                                <option value="All" selected="selected" data-select2-id="select2-data-98-318q">All
-                                    time</option>
-                                <option value="thisyear">This year</option>
-                                <option value="thismonth">This month</option>
-                                <option value="lastmonth">Last month</option>
-                                <option value="last90days">Last 90 days</option>
-                            </select><span class="select2 select2-container select2-container--bootstrap5"
-                                dir="ltr" data-select2-id="select2-data-97-csko" style="width: 100%;"><span
-                                    class="selection"><span
-                                        class="select2-selection select2-selection--single w-125px form-select form-select-solid form-select-sm"
-                                        role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                        aria-disabled="false" aria-labelledby="select2-kt_filter_year-container"
-                                        aria-controls="select2-kt_filter_year-container"><span
-                                            class="select2-selection__rendered" id="select2-kt_filter_year-container"
-                                            role="textbox" aria-readonly="true" title="All time">All time</span><span
-                                            class="select2-selection__arrow" role="presentation"><b
-                                                role="presentation"></b></span></span></span><span
-                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
-                        </div>
-                        <!--end::Select-->
-                        <!--begin::Select-->
-                        <div class="me-4 my-1">
-                            <select id="kt_filter_orders" name="orders" data-control="select2"
-                                data-hide-search="true"
-                                class="w-125px form-select form-select-solid form-select-sm select2-hidden-accessible"
-                                data-select2-id="select2-data-kt_filter_orders" tabindex="-1" aria-hidden="true">
-                                <option value="All" selected="selected" data-select2-id="select2-data-100-t3e4">
-                                    All Orders</option>
-                                <option value="Approved">Approved</option>
-                                <option value="Declined">Declined</option>
-                                <option value="In Progress">In Progress</option>
-                                <option value="In Transit">In Transit</option>
-                            </select><span class="select2 select2-container select2-container--bootstrap5"
-                                dir="ltr" data-select2-id="select2-data-99-o16f" style="width: 100%;"><span
-                                    class="selection"><span
-                                        class="select2-selection select2-selection--single w-125px form-select form-select-solid form-select-sm"
-                                        role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                        aria-disabled="false" aria-labelledby="select2-kt_filter_orders-container"
-                                        aria-controls="select2-kt_filter_orders-container"><span
-                                            class="select2-selection__rendered"
-                                            id="select2-kt_filter_orders-container" role="textbox"
-                                            aria-readonly="true" title="All Orders">All Orders</span><span
-                                            class="select2-selection__arrow" role="presentation"><b
-                                                role="presentation"></b></span></span></span><span
-                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
-                        </div>
-                        <!--end::Select-->
-                        <!--begin::Search-->
-                        <div class="d-flex align-items-center position-relative my-1">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-                            <span class="svg-icon svg-icon-3 position-absolute ms-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none">
-                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2"
-                                        rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+            <div class="card card-xl-stretch mb-5 mb-xl-8 mt-6">
+                <!--begin::Header-->
+                <div class="card-header border-0 pt-5">
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder fs-3 mb-1">Surat Masuk Dan Surat Keluar</span>
+
+                    </h3>
+                    <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover"
+                        title="" data-bs-original-title="Tambah Surat">
+                        <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal"
+                            data-bs-target="#AddMail">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                            <span class="svg-icon svg-icon-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-envelope-plus" viewBox="0 0 16 16">
                                     <path
-                                        d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
-                                        fill="black"></path>
+                                        d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z" />
+                                    <path
+                                        d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
-                            <input type="text" id="kt_filter_search"
-                                class="form-control form-control-solid form-select-sm w-150px ps-9"
-                                placeholder="Search Order">
-                        </div>
-                        <!--end::Search-->
+                            <!--end::Svg Icon-->Input Surat</a>
                     </div>
-                    <!--begin::Card toolbar-->
                 </div>
-                <!--end::Card header-->
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
+                <!--end::Header-->
+                <!--begin::Body-->
+                <div class="card-body py-3">
                     <!--begin::Table container-->
                     <div class="table-responsive">
                         <!--begin::Table-->
-                        <div id="kt_profile_overview_table_wrapper"
-                            class="dataTables_wrapper dt-bootstrap4 no-footer">
-                            <div class="table-responsive">
-                                <table id="kt_profile_overview_table"
-                                    class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bolder dataTable no-footer">
-                                    <!--begin::Head-->
-                                    <thead class="fs-7 text-gray-400 text-uppercase">
-                                        <tr>
-                                            <th class="min-w-250px sorting" tabindex="0"
-                                                aria-controls="kt_profile_overview_table" rowspan="1"
-                                                colspan="1" aria-label="Manager: activate to sort column ascending"
-                                                style="width: 380.766px;">Manager</th>
-                                            <th class="min-w-150px sorting" tabindex="0"
-                                                aria-controls="kt_profile_overview_table" rowspan="1"
-                                                colspan="1" aria-label="Date: activate to sort column ascending"
-                                                style="width: 238.609px;">Date</th>
-                                            <th class="min-w-90px sorting" tabindex="0"
-                                                aria-controls="kt_profile_overview_table" rowspan="1"
-                                                colspan="1" aria-label="Amount: activate to sort column ascending"
-                                                style="width: 150.594px;">Amount</th>
-                                            <th class="min-w-90px sorting" tabindex="0"
-                                                aria-controls="kt_profile_overview_table" rowspan="1"
-                                                colspan="1" aria-label="Status: activate to sort column ascending"
-                                                style="width: 150.594px;">Status</th>
-                                            <th class="min-w-50px text-end sorting" tabindex="0"
-                                                aria-controls="kt_profile_overview_table" rowspan="1"
-                                                colspan="1" aria-label="Details: activate to sort column ascending"
-                                                style="width: 91.9375px;">Details</th>
-                                        </tr>
-                                    </thead>
-                                    <!--end::Head-->
-                                    <!--begin::Body-->
-                                    <tbody class="fs-6">
-
-                                        <tr class="odd">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <img alt="Pic" src="assets/media/avatars/150-1.jpg">
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Emma
-                                                            Smith</a>
-                                                        <div class="fw-bold text-gray-400">e.smith@kpmg.com.au</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-10-25T00:00:00+08:00">Oct 25, 2021</td>
-                                            <td>$969.00</td>
-                                            <td>
-                                                <span class="badge badge-light-info fw-bolder px-4 py-3">In
-                                                    progress</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <span
-                                                                class="symbol-label bg-light-danger text-danger fw-bold">M</span>
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                        <!--begin::Online-->
-                                                        <div
-                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
-                                                        </div>
-                                                        <!--end::Online-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Melody
-                                                            Macy</a>
-                                                        <div class="fw-bold text-gray-400">melody@altbox.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-02-21T00:00:00+08:00">Feb 21, 2021</td>
-                                            <td>$654.00</td>
-                                            <td>
-                                                <span class="badge badge-light-info fw-bolder px-4 py-3">In
-                                                    progress</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="odd">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <img alt="Pic" src="assets/media/avatars/150-26.jpg">
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Max Smith</a>
-                                                        <div class="fw-bold text-gray-400">max@kt.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-11-10T00:00:00+08:00">Nov 10, 2021</td>
-                                            <td>$400.00</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <img alt="Pic" src="assets/media/avatars/150-4.jpg">
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Sean Bean</a>
-                                                        <div class="fw-bold text-gray-400">sean@dellito.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-06-24T00:00:00+08:00">Jun 24, 2021</td>
-                                            <td>$548.00</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="odd">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <img alt="Pic" src="assets/media/avatars/150-15.jpg">
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Brian Cox</a>
-                                                        <div class="fw-bold text-gray-400">brian@exchange.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-09-22T00:00:00+08:00">Sep 22, 2021</td>
-                                            <td>$475.00</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <span
-                                                                class="symbol-label bg-light-warning text-warning fw-bold">M</span>
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                        <!--begin::Online-->
-                                                        <div
-                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
-                                                        </div>
-                                                        <!--end::Online-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Mikaela
-                                                            Collins</a>
-                                                        <div class="fw-bold text-gray-400">mikaela@pexcom.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-03-10T00:00:00+08:00">Mar 10, 2021</td>
-                                            <td>$551.00</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="odd">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <img alt="Pic" src="assets/media/avatars/150-8.jpg">
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Francis
-                                                            Mitcham</a>
-                                                        <div class="fw-bold text-gray-400">f.mitcham@kpmg.com.au</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-09-22T00:00:00+08:00">Sep 22, 2021</td>
-                                            <td>$791.00</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <span
-                                                                class="symbol-label bg-light-danger text-danger fw-bold">O</span>
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                        <!--begin::Online-->
-                                                        <div
-                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
-                                                        </div>
-                                                        <!--end::Online-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Olivia
-                                                            Wild</a>
-                                                        <div class="fw-bold text-gray-400">olivia@corpmail.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-08-19T00:00:00+08:00">Aug 19, 2021</td>
-                                            <td>$554.00</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="odd">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <span
-                                                                class="symbol-label bg-light-primary text-primary fw-bold">N</span>
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                        <!--begin::Online-->
-                                                        <div
-                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
-                                                        </div>
-                                                        <!--end::Online-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Neil Owen</a>
-                                                        <div class="fw-bold text-gray-400">owen.neil@gmail.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-02-21T00:00:00+08:00">Feb 21, 2021</td>
-                                            <td>$954.00</td>
-                                            <td>
-                                                <span class="badge badge-light-info fw-bolder px-4 py-3">In
-                                                    progress</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="even">
-                                            <td>
-                                                <!--begin::User-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Wrapper-->
-                                                    <div class="me-5 position-relative">
-                                                        <!--begin::Avatar-->
-                                                        <div class="symbol symbol-35px symbol-circle">
-                                                            <img alt="Pic" src="assets/media/avatars/150-6.jpg">
-                                                        </div>
-                                                        <!--end::Avatar-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                    <!--begin::Info-->
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <a href=""
-                                                            class="fs-6 text-gray-800 text-hover-primary">Dan
-                                                            Wilson</a>
-                                                        <div class="fw-bold text-gray-400">dam@consilting.com</div>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::User-->
-                                            </td>
-                                            <td data-order="2021-06-24T00:00:00+08:00">Jun 24, 2021</td>
-                                            <td>$636.00</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-light btn-sm">View</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <!--end::Body-->
-                                </table>
-                            </div>
-                            <div class="row">
-                                <div
-                                    class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
-                                    <div class="dataTables_length" id="kt_profile_overview_table_length">
-                                        <label><select name="kt_profile_overview_table_length"
-                                                aria-controls="kt_profile_overview_table"
-                                                class="form-select form-select-sm form-select-solid">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select></label></div>
-                                </div>
-                                <div
-                                    class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
-                                    <div class="dataTables_paginate paging_simple_numbers"
-                                        id="kt_profile_overview_table_paginate">
-                                        <ul class="pagination">
-                                            <li class="paginate_button page-item previous disabled"
-                                                id="kt_profile_overview_table_previous"><a href="#"
-                                                    aria-controls="kt_profile_overview_table" data-dt-idx="0"
-                                                    tabindex="0" class="page-link"><i class="previous"></i></a>
-                                            </li>
-                                            <li class="paginate_button page-item active"><a href="#"
-                                                    aria-controls="kt_profile_overview_table" data-dt-idx="1"
-                                                    tabindex="0" class="page-link">1</a></li>
-                                            <li class="paginate_button page-item "><a href="#"
-                                                    aria-controls="kt_profile_overview_table" data-dt-idx="2"
-                                                    tabindex="0" class="page-link">2</a></li>
-                                            <li class="paginate_button page-item "><a href="#"
-                                                    aria-controls="kt_profile_overview_table" data-dt-idx="3"
-                                                    tabindex="0" class="page-link">3</a></li>
-                                            <li class="paginate_button page-item next"
-                                                id="kt_profile_overview_table_next"><a href="#"
-                                                    aria-controls="kt_profile_overview_table" data-dt-idx="4"
-                                                    tabindex="0" class="page-link"><i class="next"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                            <!--begin::Table head-->
+                            <thead>
+                                <tr class="fw-bolder text-muted">
+                                    <th class="w-25px">
+                                        No
+                                    </th>
+                                    <th class="min-w-150px">Asal Dan Perihal Surat</th>
+                                    <th class="min-w-140px">No Dan Tanggal Surat</th>
+                                    <th class="min-w-120px">Jenis Surat</th>
+                                    <th class="min-w-120px">Status Surat</th>
+                                    <th class="min-w-100px text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <!--end::Table head-->
+                            <!--begin::Table body-->
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a href="#" class="text-muted fw-bold text-muted d-block fs-7">Umum
+                                                    Dan Kepegawaian</a>
+                                                <span class="text-dark fw-bolder text-hover-primary fs-6">Laporan
+                                                    Monitoring Dan Evaluasi</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-start flex-column">
+                                            <a href="#"
+                                                class="text-muted fw-bold text-muted d-block fs-7">B-11/RSUDDARA/SIMRS/445.23/01/2024</a>
+                                            <span class="text-dark fw-bolder text-hover-primary fs-6">01 Januari
+                                                2004</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-start flex-column">
+                                            <a href="#" class="text-muted fw-bold text-muted d-block fs-7">Surat
+                                                Keluar</a>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-start flex-column">
+                                            <span class="badge rounded-pill bg-success fs-8 fw-bolder">Telah Beredar</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-end flex-shrink-0">
+                                            <a href="#"
+                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                                <span class="svg-icon svg-icon-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z"
+                                                            fill="black"></path>
+                                                        <path opacity="0.3"
+                                                            d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </a>
+                                            <a href="#"
+                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+                                                <span class="svg-icon svg-icon-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <path opacity="0.3"
+                                                            d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
+                                                            fill="black"></path>
+                                                        <path
+                                                            d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </a>
+                                            <a href="#"
+                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                                <span class="svg-icon svg-icon-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+                                                            fill="black"></path>
+                                                        <path opacity="0.5"
+                                                            d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+                                                            fill="black"></path>
+                                                        <path opacity="0.5"
+                                                            d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--end::Table body-->
+                        </table>
                         <!--end::Table-->
                     </div>
                     <!--end::Table container-->
                 </div>
-                <!--end::Card body-->
+                <!--begin::Body-->
+
+                {{-- Begin::Modal --}}
+
+                <div class="modal fade" id="AddMail" tabindex="-1" aria-hidden="true">
+                    <!--begin::Modal dialog-->
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                        <!--begin::Modal content-->
+                        <div class="modal-content">
+                            <!--begin::Form-->
+                            <form class="form" action="#" id="kt_modal_add_customer_form"
+                                data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                                <!--begin::Modal header-->
+                                <div class="modal-header" id="kt_modal_add_customer_header">
+                                    <!--begin::Modal title-->
+                                    <h2 class="fw-bolder">Input Surat</h2>
+                                    <!--end::Modal title-->
+                                    <!--begin::Close-->
+                                    <div id="kt_modal_add_customer_close"
+                                        class="btn btn-icon btn-sm btn-active-icon-primary">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
+                                                    rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                    transform="rotate(45 7.41422 6)" fill="black" />
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <!--end::Close-->
+                                </div>
+                                <!--end::Modal header-->
+                                <!--begin::Modal body-->
+                                <div class="modal-body py-10 px-lg-17">
+                                    <!--begin::Scroll-->
+                                    <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll"
+                                        data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+                                        data-kt-scroll-max-height="auto"
+                                        data-kt-scroll-dependencies="#kt_modal_add_customer_header"
+                                        data-kt-scroll-wrappers="#kt_modal_add_customer_scroll"
+                                        data-kt-scroll-offset="300px">
+                                        <!--begin::Input group-->
+                                        <div class="row g-9 mb-1">
+                                            <!--begin::Col-->
+                                            <div class="col-md-6 fv-row">
+                                                <!--begin::Label-->
+                                                <label class="required fs-6 fw-bold mb-2">Kode Surat</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input class="form-control form-control-solid"
+                                                    placeholder="Contoh : B1200" name="" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-md-6 fv-row">
+                                                <!--begin::Label-->
+                                                <label class="required fs-6 fw-bold mb-2">Jenis Surat</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <select name="country" aria-label="Jenis Surat" data-control="select2"
+                                                    data-placeholder="Jenis Surat" data-dropdown-parent="#AddMail"
+                                                    class="form-select form-select-solid fw-bolder">
+                                                    <option value="">Jenis Surat</option>
+                                                    <option >Surat Masuk</option>
+                                                    <option >Surat Keluar</option>
+                                                </select>
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--end::Input group-->
+                                            <!--begin::Input group-->
+                                            <div class="fv-row mb-1">
+                                                <!--begin::Label-->
+                                                <label class="required fs-6 fw-bold mb-2">No Surat</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-solid"
+                                                    placeholder="" name=""  />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--begin::Input group-->
+                                            <div class="fv-row mb-1">
+                                                <!--begin::Label-->
+                                                <label class="required fs-6 fw-bold mb-2">Tanggal Surat</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-solid"
+                                                    placeholder="" name="" id="TanggalSuratMasuk"  />
+                                                <!--end::Input-->
+                                            </div>
+                                            <div class="fv-row mb-1">
+                                                <!--begin::Label-->
+                                                <label class="required fs-6 fw-bold mb-2">Asal Surat</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-solid"
+                                                    placeholder="" name=""  />
+                                                <!--end::Input-->
+                                            </div>
+                                            <div class="fv-row mb-1">
+                                                <!--begin::Label-->
+                                                <label class="required fs-6 fw-bold mb-2">Perihal Surat</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-solid"
+                                                    placeholder="" name="">
+                                                <!--end::Input-->
+                                            </div>
+                                            <div class="fv-row mb-1">
+                                                <!--begin::Label-->
+                                                <label class="required fs-6 fw-bold mb-2">Lokasi Surat</label>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-solid"
+                                                    placeholder="" name=""  />
+                                                <!--end::Input-->
+                                            </div>
+                                        </div>
+                                        <!--end::Scroll-->
+                                    </div>
+                                    <!--end::Modal body-->
+                                    <!--begin::Modal footer-->
+                                    <div class="modal-footer flex-center">
+                                        <!--begin::Button-->
+                                        <button type="reset" id="kt_modal_add_customer_cancel"
+                                            class="btn btn-light me-3">Keluar</button>
+                                        <!--end::Button-->
+                                        <!--begin::Button-->
+                                        <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
+                                            <span class="indicator-label">Simpan</span>
+                                            <span class="indicator-progress">Please wait...
+                                                <span
+                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                        </button>
+                                        <!--end::Button-->
+                                    </div>
+                                    <!--end::Modal footer-->
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                    </div>
+                </div>
+                {{-- End::Modal --}}
             </div>
         </div>
     </div>
