@@ -12,7 +12,7 @@
                         <div class="card-header mt-6">
                             <!--begin::Card title-->
                             <div class="card-title flex-column">
-                                <h3 class="fw-bolder mb-1">Agenda Surat Tahun 2024</h3>                                
+                                <h3 class="fw-bolder mb-1">Agenda Surat Tahun 2024</h3>
                             </div>
                             <!--end::Card title-->
                             <!--begin::Card toolbar-->
@@ -146,295 +146,543 @@
                     </div>
                     <!--end::Graph-->
                 </div>
-                <!--end::Col-->
-                <div class="card pt-4 mb-6 mb-xl-9">
-                    <!--begin::Card header-->
-                    <div class="card-header border-0">
-                        <!--begin::Card title-->
-                        <div class="card-title">
-                            <h2>Payment Records</h2>
+                <!--end::Col-->                
+            </div>
+            <div class="card card-flush mt-6 mt-xl-6">
+                <!--begin::Card header-->
+                <div class="card-header mt-5">
+                    <!--begin::Card title-->
+                    <div class="card-title flex-column">
+                        <h3 class="fw-bolder mb-1">Project Spendings</h3>
+                        <div class="fs-6 text-gray-400">Total $260,300 sepnt so far</div>
+                    </div>
+                    <!--begin::Card title-->
+                    <!--begin::Card toolbar-->
+                    <div class="card-toolbar my-1">
+                        <!--begin::Select-->
+                        <div class="me-6 my-1">
+                            <select id="kt_filter_year" name="year" data-control="select2" data-hide-search="true"
+                                class="w-125px form-select form-select-solid form-select-sm select2-hidden-accessible"
+                                data-select2-id="select2-data-kt_filter_year" tabindex="-1" aria-hidden="true">
+                                <option value="All" selected="selected" data-select2-id="select2-data-98-318q">All
+                                    time</option>
+                                <option value="thisyear">This year</option>
+                                <option value="thismonth">This month</option>
+                                <option value="lastmonth">Last month</option>
+                                <option value="last90days">Last 90 days</option>
+                            </select><span class="select2 select2-container select2-container--bootstrap5"
+                                dir="ltr" data-select2-id="select2-data-97-csko" style="width: 100%;"><span
+                                    class="selection"><span
+                                        class="select2-selection select2-selection--single w-125px form-select form-select-solid form-select-sm"
+                                        role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                        aria-disabled="false" aria-labelledby="select2-kt_filter_year-container"
+                                        aria-controls="select2-kt_filter_year-container"><span
+                                            class="select2-selection__rendered" id="select2-kt_filter_year-container"
+                                            role="textbox" aria-readonly="true" title="All time">All time</span><span
+                                            class="select2-selection__arrow" role="presentation"><b
+                                                role="presentation"></b></span></span></span><span
+                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
-                        <!--end::Card title-->
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar">
-                            <!--begin::Filter-->
-                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_payment">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen035.svg-->
-                            <span class="svg-icon svg-icon-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="black"></rect>
-                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="black"></rect>
-                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="black"></rect>
+                        <!--end::Select-->
+                        <!--begin::Select-->
+                        <div class="me-4 my-1">
+                            <select id="kt_filter_orders" name="orders" data-control="select2"
+                                data-hide-search="true"
+                                class="w-125px form-select form-select-solid form-select-sm select2-hidden-accessible"
+                                data-select2-id="select2-data-kt_filter_orders" tabindex="-1" aria-hidden="true">
+                                <option value="All" selected="selected" data-select2-id="select2-data-100-t3e4">
+                                    All Orders</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Declined">Declined</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="In Transit">In Transit</option>
+                            </select><span class="select2 select2-container select2-container--bootstrap5"
+                                dir="ltr" data-select2-id="select2-data-99-o16f" style="width: 100%;"><span
+                                    class="selection"><span
+                                        class="select2-selection select2-selection--single w-125px form-select form-select-solid form-select-sm"
+                                        role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                        aria-disabled="false" aria-labelledby="select2-kt_filter_orders-container"
+                                        aria-controls="select2-kt_filter_orders-container"><span
+                                            class="select2-selection__rendered"
+                                            id="select2-kt_filter_orders-container" role="textbox"
+                                            aria-readonly="true" title="All Orders">All Orders</span><span
+                                            class="select2-selection__arrow" role="presentation"><b
+                                                role="presentation"></b></span></span></span><span
+                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                        <!--end::Select-->
+                        <!--begin::Search-->
+                        <div class="d-flex align-items-center position-relative my-1">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                            <span class="svg-icon svg-icon-3 position-absolute ms-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2"
+                                        rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                    <path
+                                        d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                        fill="black"></path>
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->Add payment</button>
-                            <!--end::Filter-->
+                            <!--end::Svg Icon-->
+                            <input type="text" id="kt_filter_search"
+                                class="form-control form-control-solid form-select-sm w-150px ps-9"
+                                placeholder="Search Order">
                         </div>
-                        <!--end::Card toolbar-->
+                        <!--end::Search-->
                     </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body pt-0 pb-5">
+                    <!--begin::Card toolbar-->
+                </div>
+                <!--end::Card header-->
+                <!--begin::Card body-->
+                <div class="card-body pt-0">
+                    <!--begin::Table container-->
+                    <div class="table-responsive">
                         <!--begin::Table-->
-                        <div id="kt_table_customers_payment_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="table-responsive"><table class="table align-middle table-row-dashed gy-5 dataTable no-footer" id="kt_table_customers_payment">
-                            <!--begin::Table head-->
-                            <thead class="border-bottom border-gray-200 fs-7 fw-bolder">
-                                <!--begin::Table row-->
-                                <tr class="text-start text-muted text-uppercase gs-0"><th class="min-w-100px sorting" tabindex="0" aria-controls="kt_table_customers_payment" rowspan="1" colspan="1" aria-label="Invoice No.: activate to sort column ascending" style="width: 100px;">Invoice No.</th><th class="sorting sorting_asc" tabindex="0" aria-controls="kt_table_customers_payment" rowspan="1" colspan="1" aria-label="Status: activate to sort column descending" style="width: 58.9219px;" aria-sort="ascending">Status</th><th class="sorting" tabindex="0" aria-controls="kt_table_customers_payment" rowspan="1" colspan="1" aria-label="Amount: activate to sort column ascending" style="width: 54.4531px;">Amount</th><th class="min-w-100px sorting" tabindex="0" aria-controls="kt_table_customers_payment" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 100px;">Date</th><th class="text-end min-w-100px pe-4 sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 100px;">Actions</th></tr>
-                                <!--end::Table row-->
-                            </thead>
-                            <!--end::Table head-->
-                            <!--begin::Table body-->
-                            <tbody class="fs-6 fw-bold text-gray-600">
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                                <!--begin::Table row-->
-                                
-                                <!--end::Table row-->
-                            <tr class="odd">
-                                    <!--begin::Invoice=-->
-                                    <td class="">
-                                        <a href="#" class="text-gray-600 text-hover-primary mb-1">3902-4737</a>
-                                    </td>
-                                    <!--end::Invoice=-->
-                                    <!--begin::Status=-->
-                                    <td class="sorting_1">
-                                        <span class="badge badge-light-warning">Pending</span>
-                                    </td>
-                                    <!--end::Status=-->
-                                    <!--begin::Amount=-->
-                                    <td class="">$880.00</td>
-                                    <!--end::Amount=-->
-                                    <!--begin::Date=-->
-                                    <td data-order="2020-10-21T17:54:00+08:00">21 Oct 2020, 5:54 pm</td>
-                                    <!--end::Date=-->
-                                    <!--begin::Action=-->
-                                    <td class="pe-0 text-end">
-                                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                        <span class="svg-icon svg-icon-5 m-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon--></a>
-                                        <!--begin::Menu-->
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo13/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu-->
-                                    </td>
-                                    <!--end::Action=-->
-                                </tr><tr class="even">
-                                    <!--begin::Invoice=-->
-                                    <td class="">
-                                        <a href="#" class="text-gray-600 text-hover-primary mb-1">9309-9939</a>
-                                    </td>
-                                    <!--end::Invoice=-->
-                                    <!--begin::Status=-->
-                                    <td class="sorting_1">
-                                        <span class="badge badge-light-warning">Pending</span>
-                                    </td>
-                                    <!--end::Status=-->
-                                    <!--begin::Amount=-->
-                                    <td class="">$8,700.00</td>
-                                    <!--end::Amount=-->
-                                    <!--begin::Date=-->
-                                    <td data-order="2020-09-01T16:58:00+08:00">01 Sep 2020, 4:58 pm</td>
-                                    <!--end::Date=-->
-                                    <!--begin::Action=-->
-                                    <td class="pe-0 text-end">
-                                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                        <span class="svg-icon svg-icon-5 m-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon--></a>
-                                        <!--begin::Menu-->
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo13/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu-->
-                                    </td>
-                                    <!--end::Action=-->
-                                </tr><tr class="odd">
-                                    <!--begin::Invoice=-->
-                                    <td class="">
-                                        <a href="#" class="text-gray-600 text-hover-primary mb-1">5994-9050</a>
-                                    </td>
-                                    <!--end::Invoice=-->
-                                    <!--begin::Status=-->
-                                    <td class="sorting_1">
-                                        <span class="badge badge-light-danger">Rejected</span>
-                                    </td>
-                                    <!--end::Status=-->
-                                    <!--begin::Amount=-->
-                                    <td class="">$450.00</td>
-                                    <!--end::Amount=-->
-                                    <!--begin::Date=-->
-                                    <td data-order="2020-09-03T01:08:00+08:00">03 Sep 2020, 1:08 am</td>
-                                    <!--end::Date=-->
-                                    <!--begin::Action=-->
-                                    <td class="pe-0 text-end">
-                                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                        <span class="svg-icon svg-icon-5 m-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon--></a>
-                                        <!--begin::Menu-->
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo13/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu-->
-                                    </td>
-                                    <!--end::Action=-->
-                                </tr><tr class="even">
-                                    <!--begin::Invoice=-->
-                                    <td class="">
-                                        <a href="#" class="text-gray-600 text-hover-primary mb-1">3023-5509</a>
-                                    </td>
-                                    <!--end::Invoice=-->
-                                    <!--begin::Status=-->
-                                    <td class="sorting_1">
-                                        <span class="badge badge-light-success">Successful</span>
-                                    </td>
-                                    <!--end::Status=-->
-                                    <!--begin::Amount=-->
-                                    <td class="">$7,650.00</td>
-                                    <!--end::Amount=-->
-                                    <!--begin::Date=-->
-                                    <td data-order="2020-10-19T07:32:00+08:00">19 Oct 2020, 7:32 am</td>
-                                    <!--end::Date=-->
-                                    <!--begin::Action=-->
-                                    <td class="pe-0 text-end">
-                                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                        <span class="svg-icon svg-icon-5 m-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon--></a>
-                                        <!--begin::Menu-->
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo13/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu-->
-                                    </td>
-                                    <!--end::Action=-->
-                                </tr><tr class="odd">
-                                    <!--begin::Invoice=-->
-                                    <td class="">
-                                        <a href="#" class="text-gray-600 text-hover-primary mb-1">4892-6290</a>
-                                    </td>
-                                    <!--end::Invoice=-->
-                                    <!--begin::Status=-->
-                                    <td class="sorting_1">
-                                        <span class="badge badge-light-success">Successful</span>
-                                    </td>
-                                    <!--end::Status=-->
-                                    <!--begin::Amount=-->
-                                    <td class="">$129.00</td>
-                                    <!--end::Amount=-->
-                                    <!--begin::Date=-->
-                                    <td data-order="2020-09-11T15:18:00+08:00">11 Sep 2020, 3:18 pm</td>
-                                    <!--end::Date=-->
-                                    <!--begin::Action=-->
-                                    <td class="pe-0 text-end">
-                                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                        <span class="svg-icon svg-icon-5 m-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon--></a>
-                                        <!--begin::Menu-->
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="../../demo13/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu-->
-                                    </td>
-                                    <!--end::Action=-->
-                                </tr></tbody>
-                            <!--end::Table body-->
-                        </table></div><div class="row"><div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start"></div><div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"><div class="dataTables_paginate paging_simple_numbers" id="kt_table_customers_payment_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="kt_table_customers_payment_previous"><a href="#" aria-controls="kt_table_customers_payment" data-dt-idx="0" tabindex="0" class="page-link"><i class="previous"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="kt_table_customers_payment" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="kt_table_customers_payment" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next" id="kt_table_customers_payment_next"><a href="#" aria-controls="kt_table_customers_payment" data-dt-idx="3" tabindex="0" class="page-link"><i class="next"></i></a></li></ul></div></div></div></div>
+                        <div id="kt_profile_overview_table_wrapper"
+                            class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <div class="table-responsive">
+                                <table id="kt_profile_overview_table"
+                                    class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bolder dataTable no-footer">
+                                    <!--begin::Head-->
+                                    <thead class="fs-7 text-gray-400 text-uppercase">
+                                        <tr>
+                                            <th class="min-w-250px sorting" tabindex="0"
+                                                aria-controls="kt_profile_overview_table" rowspan="1"
+                                                colspan="1" aria-label="Manager: activate to sort column ascending"
+                                                style="width: 380.766px;">Manager</th>
+                                            <th class="min-w-150px sorting" tabindex="0"
+                                                aria-controls="kt_profile_overview_table" rowspan="1"
+                                                colspan="1" aria-label="Date: activate to sort column ascending"
+                                                style="width: 238.609px;">Date</th>
+                                            <th class="min-w-90px sorting" tabindex="0"
+                                                aria-controls="kt_profile_overview_table" rowspan="1"
+                                                colspan="1" aria-label="Amount: activate to sort column ascending"
+                                                style="width: 150.594px;">Amount</th>
+                                            <th class="min-w-90px sorting" tabindex="0"
+                                                aria-controls="kt_profile_overview_table" rowspan="1"
+                                                colspan="1" aria-label="Status: activate to sort column ascending"
+                                                style="width: 150.594px;">Status</th>
+                                            <th class="min-w-50px text-end sorting" tabindex="0"
+                                                aria-controls="kt_profile_overview_table" rowspan="1"
+                                                colspan="1" aria-label="Details: activate to sort column ascending"
+                                                style="width: 91.9375px;">Details</th>
+                                        </tr>
+                                    </thead>
+                                    <!--end::Head-->
+                                    <!--begin::Body-->
+                                    <tbody class="fs-6">
+
+                                        <tr class="odd">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <img alt="Pic" src="assets/media/avatars/150-1.jpg">
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Emma
+                                                            Smith</a>
+                                                        <div class="fw-bold text-gray-400">e.smith@kpmg.com.au</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-10-25T00:00:00+08:00">Oct 25, 2021</td>
+                                            <td>$969.00</td>
+                                            <td>
+                                                <span class="badge badge-light-info fw-bolder px-4 py-3">In
+                                                    progress</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <span
+                                                                class="symbol-label bg-light-danger text-danger fw-bold">M</span>
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                        <!--begin::Online-->
+                                                        <div
+                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
+                                                        </div>
+                                                        <!--end::Online-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Melody
+                                                            Macy</a>
+                                                        <div class="fw-bold text-gray-400">melody@altbox.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-02-21T00:00:00+08:00">Feb 21, 2021</td>
+                                            <td>$654.00</td>
+                                            <td>
+                                                <span class="badge badge-light-info fw-bolder px-4 py-3">In
+                                                    progress</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <img alt="Pic" src="assets/media/avatars/150-26.jpg">
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Max Smith</a>
+                                                        <div class="fw-bold text-gray-400">max@kt.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-11-10T00:00:00+08:00">Nov 10, 2021</td>
+                                            <td>$400.00</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <img alt="Pic" src="assets/media/avatars/150-4.jpg">
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Sean Bean</a>
+                                                        <div class="fw-bold text-gray-400">sean@dellito.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-06-24T00:00:00+08:00">Jun 24, 2021</td>
+                                            <td>$548.00</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <img alt="Pic" src="assets/media/avatars/150-15.jpg">
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Brian Cox</a>
+                                                        <div class="fw-bold text-gray-400">brian@exchange.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-09-22T00:00:00+08:00">Sep 22, 2021</td>
+                                            <td>$475.00</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <span
+                                                                class="symbol-label bg-light-warning text-warning fw-bold">M</span>
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                        <!--begin::Online-->
+                                                        <div
+                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
+                                                        </div>
+                                                        <!--end::Online-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Mikaela
+                                                            Collins</a>
+                                                        <div class="fw-bold text-gray-400">mikaela@pexcom.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-03-10T00:00:00+08:00">Mar 10, 2021</td>
+                                            <td>$551.00</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <img alt="Pic" src="assets/media/avatars/150-8.jpg">
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Francis
+                                                            Mitcham</a>
+                                                        <div class="fw-bold text-gray-400">f.mitcham@kpmg.com.au</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-09-22T00:00:00+08:00">Sep 22, 2021</td>
+                                            <td>$791.00</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-light-success fw-bolder px-4 py-3">Approved</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <span
+                                                                class="symbol-label bg-light-danger text-danger fw-bold">O</span>
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                        <!--begin::Online-->
+                                                        <div
+                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
+                                                        </div>
+                                                        <!--end::Online-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Olivia
+                                                            Wild</a>
+                                                        <div class="fw-bold text-gray-400">olivia@corpmail.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-08-19T00:00:00+08:00">Aug 19, 2021</td>
+                                            <td>$554.00</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-light-warning fw-bolder px-4 py-3">Pending</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <span
+                                                                class="symbol-label bg-light-primary text-primary fw-bold">N</span>
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                        <!--begin::Online-->
+                                                        <div
+                                                            class="bg-success position-absolute h-8px w-8px rounded-circle translate-middle start-100 top-100 ms-n1 mt-n1">
+                                                        </div>
+                                                        <!--end::Online-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Neil Owen</a>
+                                                        <div class="fw-bold text-gray-400">owen.neil@gmail.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-02-21T00:00:00+08:00">Feb 21, 2021</td>
+                                            <td>$954.00</td>
+                                            <td>
+                                                <span class="badge badge-light-info fw-bolder px-4 py-3">In
+                                                    progress</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <!--begin::User-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-5 position-relative">
+                                                        <!--begin::Avatar-->
+                                                        <div class="symbol symbol-35px symbol-circle">
+                                                            <img alt="Pic" src="assets/media/avatars/150-6.jpg">
+                                                        </div>
+                                                        <!--end::Avatar-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <a href=""
+                                                            class="fs-6 text-gray-800 text-hover-primary">Dan
+                                                            Wilson</a>
+                                                        <div class="fw-bold text-gray-400">dam@consilting.com</div>
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::User-->
+                                            </td>
+                                            <td data-order="2021-06-24T00:00:00+08:00">Jun 24, 2021</td>
+                                            <td>$636.00</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-light-danger fw-bolder px-4 py-3">Rejected</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-light btn-sm">View</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--end::Body-->
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div
+                                    class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
+                                    <div class="dataTables_length" id="kt_profile_overview_table_length">
+                                        <label><select name="kt_profile_overview_table_length"
+                                                aria-controls="kt_profile_overview_table"
+                                                class="form-select form-select-sm form-select-solid">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select></label></div>
+                                </div>
+                                <div
+                                    class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
+                                    <div class="dataTables_paginate paging_simple_numbers"
+                                        id="kt_profile_overview_table_paginate">
+                                        <ul class="pagination">
+                                            <li class="paginate_button page-item previous disabled"
+                                                id="kt_profile_overview_table_previous"><a href="#"
+                                                    aria-controls="kt_profile_overview_table" data-dt-idx="0"
+                                                    tabindex="0" class="page-link"><i class="previous"></i></a>
+                                            </li>
+                                            <li class="paginate_button page-item active"><a href="#"
+                                                    aria-controls="kt_profile_overview_table" data-dt-idx="1"
+                                                    tabindex="0" class="page-link">1</a></li>
+                                            <li class="paginate_button page-item "><a href="#"
+                                                    aria-controls="kt_profile_overview_table" data-dt-idx="2"
+                                                    tabindex="0" class="page-link">2</a></li>
+                                            <li class="paginate_button page-item "><a href="#"
+                                                    aria-controls="kt_profile_overview_table" data-dt-idx="3"
+                                                    tabindex="0" class="page-link">3</a></li>
+                                            <li class="paginate_button page-item next"
+                                                id="kt_profile_overview_table_next"><a href="#"
+                                                    aria-controls="kt_profile_overview_table" data-dt-idx="4"
+                                                    tabindex="0" class="page-link"><i class="next"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--end::Table-->
                     </div>
-                    <!--end::Card body-->
-                </div>               
+                    <!--end::Table container-->
+                </div>
+                <!--end::Card body-->
             </div>
         </div>
     </div>

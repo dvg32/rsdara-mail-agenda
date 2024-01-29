@@ -78,9 +78,9 @@
     <script src="{{ asset('assets/js/custom/modals/upgrade-plan.js') }}"></script>
     <script src="{{ asset('assets/js/UserDetail.js') }}"></script>
     <script src="{{ asset('assets/js/Tanggal.js') }}"></script>
-    <script src="{{ asset('assets/js/NoKtp.js')}}"></script>
-    <script src="{{asset('assets/js/custom/pages/projects/project/project.js')}}"></script>
-</body>
+    <script src="{{ asset('assets/js/NoKtp.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/pages/projects/project/project.js') }}"></script>    
+   
 <!--end::Body-->
 
 </html>
