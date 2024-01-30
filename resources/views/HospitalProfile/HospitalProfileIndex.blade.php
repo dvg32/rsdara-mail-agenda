@@ -17,7 +17,15 @@
                             <!--end::Card title-->
                             <!--begin::Card toolbar-->
                             <div class="card-toolbar">
-                                <a href="#" class="btn btn-light btn-sm">View Tasks</a>
+                                <!--begin::Select-->
+                                <select name="status" data-control="select2" data-hide-search="true"
+                                    class="form-select form-select-solid form-select-sm fw-bolder w-100px">
+                                    <option value="1">2020 Q1</option>
+                                    <option value="2">2020 Q2</option>
+                                    <option value="3" selected="selected">2020 Q3</option>
+                                    <option value="4">2020 Q4</option>
+                                </select>
+                                <!--end::Select-->
                             </div>
                             <!--end::Card toolbar-->
                         </div>
@@ -30,10 +38,10 @@
                                 <div class="position-relative d-flex flex-center h-175px w-175px me-15 mb-7">
                                     <div
                                         class="position-absolute translate-middle start-50 top-50 d-flex flex-column flex-center">
-                                        <span class="fs-2qx fw-bolder">237</span>
+                                        <span class="fs-2qx fw-bolder">{{$mailCount}} </span>
                                         <span class="fs-6 fw-bold text-gray-400">Total Surat Tahun 2024</span>
                                     </div>
-                                    <canvas id="project_overview_chart"></canvas>
+                                    <canvas id="project_chart" data-mail-in="{{ $MailIn }}" data-mail-out="{{ $MailOut }}" ></canvas>
                                 </div>
                                 <!--end::Chart-->
                                 <!--begin::Labels-->
@@ -42,14 +50,14 @@
                                     <div class="d-flex fs-6 fw-bold align-items-center mb-3">
                                         <div class="bullet bg-primary me-3"></div>
                                         <div class="text-gray-400">Surat Masuk</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">25</div>
+                                        <div class="ms-auto fw-bolder text-gray-700" data-kt-countup="true" data-kt-countup-value="{{$MailIn}}" data-kt-countup-prefix="">0</div>
                                     </div>
                                     <!--end::Label-->
                                     <!--begin::Label-->
                                     <div class="d-flex fs-6 fw-bold align-items-center mb-3">
                                         <div class="bullet bg-success me-3"></div>
                                         <div class="text-gray-400">Surat Keluar</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">45</div>
+                                        <div class="ms-auto fw-bolder text-gray-700" data-kt-countup="true" data-kt-countup-value="{{$MailOut}}" data-kt-countup-prefix="">0</div>
                                     </div>
                                     <!--end::Label-->
                                 </div>
@@ -172,8 +180,7 @@
                                         No
                                     </th>
                                     <th class="min-w-150px">Asal Dan Perihal Surat</th>
-                                    <th class="min-w-140px">No Dan Tanggal Surat</th>
-                                    <th class="min-w-120px">Jenis Surat</th>
+                                    <th class="min-w-140px">No Dan Tanggal Surat</th>                                    
                                     <th class="min-w-120px">Status Surat</th>
                                     <th class="min-w-100px text-end">Actions</th>
                                 </tr>
@@ -181,36 +188,36 @@
                             <!--end::Table head-->
                             <!--begin::Table body-->
                             <tbody>
+                                @foreach ($Mail as $Mail)
                                 <tr>
                                     <td>
-                                        1
+                                        {{ $loop->iteration }}
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-muted fw-bold text-muted d-block fs-7">Umum
-                                                    Dan Kepegawaian</a>
-                                                <span class="text-dark fw-bolder text-hover-primary fs-6">Laporan
-                                                    Monitoring Dan Evaluasi</span>
+                                                <a href="#" class="text-muted fw-bold text-muted d-block fs-7">Dari Mana Saja </a>
+                                                <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->mail_subject}}</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#"
-                                                class="text-muted fw-bold text-muted d-block fs-7">B-11/RSUDDARA/SIMRS/445.23/01/2024</a>
-                                            <span class="text-dark fw-bolder text-hover-primary fs-6">01 Januari
-                                                2004</span>
+                                                class="text-muted fw-bold text-muted d-block fs-7">{{$Mail->mail_code}}</a>
+                                            <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->input_date}}</span>
                                     </td>
                                     <td>
+                                        @if ($Mail->mail_type == 1)
                                         <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-muted fw-bold text-muted d-block fs-7">Surat
-                                                Keluar</a>
-                                    </td>
-                                    <td>
+                                            <span class="badge rounded-pill bg-info fs-8 fw-bolder">Surat Masuk</span> 
+                                        </div>    
+                                        @else
                                         <div class="d-flex justify-content-start flex-column">
-                                            <span class="badge rounded-pill bg-success fs-8 fw-bolder">Telah Beredar</span>
-                                    </td>
+                                            <span class="badge rounded-pill bg-warning fs-8 fw-bolder">Surat Keluar</span> 
+                                        </div>
+                                        @endif                                        
+                                    </td>                                   
                                     <td>
                                         <div class="d-flex justify-content-end flex-shrink-0">
                                             <a href="#"
@@ -267,11 +274,14 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @endforeach
+                                
                             </tbody>
                             <!--end::Table body-->
                         </table>
-                        <!--end::Table-->
+                        {{-- {{$Mail->links() }} --}}
                     </div>
+                    
                     <!--end::Table container-->
                 </div>
                 <!--begin::Body-->

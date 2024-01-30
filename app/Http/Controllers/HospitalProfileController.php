@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\mail;
 use App\Models\hospital_profile;
 use App\Http\Requests\Storehospital_profileRequest;
 use App\Http\Requests\Updatehospital_profileRequest;
@@ -13,7 +14,12 @@ class HospitalProfileController extends Controller
      */
     public function index()
     {
-        return view('HospitalProfile.HospitalProfileIndex');
+        return view('HospitalProfile.HospitalProfileIndex',[
+            'Mail' => mail::paginate(100),
+            'mailCount' =>Mail::count(),
+            'MailIn' => Mail::where('mail_type', 1)->count(),
+            'MailOut' => Mail::where('mail_type', 2)->count(),
+        ]);
     }
 
     /**

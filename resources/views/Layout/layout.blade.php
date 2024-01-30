@@ -79,7 +79,7 @@
     <script src="{{ asset('assets/js/UserDetail.js') }}"></script>
     <script src="{{ asset('assets/js/Tanggal.js') }}"></script>
     <script src="{{ asset('assets/js/NoKtp.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/pages/projects/project/project.js') }}"></script>    
+    <script src="{{ asset('assets/js/project.js') }}"></script>    
    
 <!--end::Body-->
 
