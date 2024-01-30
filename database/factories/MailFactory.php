@@ -28,7 +28,7 @@ class MailFactory extends Factory
             'input_date' => Carbon::now()->subDays(rand(1, 30)),
             // 'input_date' => Carbon::now(),
             'mail_subject' => fake()->words(5, true),
-            'mail_date' => Carbon::now()->subDays(rand(31, 61)),
+            'mail_date' => Carbon::now()->subDays(rand(1, 61)),
             // 'mail_date' => Carbon::now(),
             'document_location' => 'https://bit.ly/'.Str::random(6),
             'mail_type' => fake()->randomElement([1, 2]),
