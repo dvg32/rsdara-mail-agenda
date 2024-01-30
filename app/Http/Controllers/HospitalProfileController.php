@@ -13,7 +13,7 @@ class HospitalProfileController extends Controller
      */
     public function index()
     {
-        //
+        return view('HospitalProfile.HospitalProfileIndex');
     }
 
     /**
