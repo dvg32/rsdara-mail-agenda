@@ -20,13 +20,25 @@
                                 <!--begin::Select-->
                                 <select name="status" data-control="select2" data-hide-search="true"
                                     class="form-select form-select-solid form-select-sm fw-bolder w-100px">
-                                    <option value="1">2020 Q1</option>
-                                    <option value="2">2020 Q2</option>
-                                    <option value="3" selected="selected">2020 Q3</option>
-                                    <option value="4">2020 Q4</option>
+                            
+                                    @php
+                                        $currentYear = date('Y');
+                                    @endphp
+                            
+                                    {{-- Display options for the current year and the three previous years --}}
+                                    @for ($i = 0; $i < 4; $i++)
+                                        @php
+                                            $year = $currentYear - $i;
+                                            $quarter = 1; // You can customize this if needed
+                                        @endphp
+                            
+                                        {{-- Output the option --}}
+                                        <option value="{{ $year }}">{{ $year }}</option>
+                                    @endfor                            
                                 </select>
                                 <!--end::Select-->
                             </div>
+                            
                             <!--end::Card toolbar-->
                         </div>
                         <!--end::Card header-->
