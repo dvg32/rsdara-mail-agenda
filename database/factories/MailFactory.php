@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +16,23 @@ class MailFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    private static $mail_code_count = 1;
+
     public function definition(): array
     {
+
         return [
             //
+            'mail_code' => self::$mail_code_count++,
+            'input_date' => Carbon::now()->subDays(rand(1, 30)),
+            // 'input_date' => Carbon::now(),
+            'mail_subject' => fake()->words(5, true),
+            'mail_date' => Carbon::now()->subDays(rand(1, 61)),
+            // 'mail_date' => Carbon::now(),
+            'document_location' => 'https://bit.ly/'.Str::random(6),
+            'mail_type' => fake()->randomElement([1, 2]),
+            'status' => '1',
         ];
     }
 }
