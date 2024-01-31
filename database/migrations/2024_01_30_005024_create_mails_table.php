@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('mail_code', 6);
             $table->date('input_date');
+            $table->string('mail_from');
             $table->text('mail_subject');
+            $table->string('mail_number');
             $table->date('mail_date');
             $table->text('document_location');
             $table->integer('mail_type')->length(4)->unsigned();

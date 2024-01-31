@@ -4,8 +4,8 @@
 // });
 
 $("#TanggalSuratMasuk").flatpickr({
-    
-    dateFormat: "d-m-Y",
+
+    dateFormat: "Y-m-d",
     maxDate: "today",
     defaultDate: new Date()
 });

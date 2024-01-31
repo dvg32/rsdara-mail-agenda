@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\HospitalProfileController;
 use App\Http\Controllers\IncomingMailController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\OutgoingMailController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\report;
 use App\Http\Controllers\User;
+use App\Models\mail;
 use App\Models\reference;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +31,19 @@ route::controller(User::class)->group(function(){
 });
 
 Route::controller(HospitalProfileController::class)->group(function(){
-    route::get('/DashboardProfile','index');
+    route::get('/DashboardProfile','index')->name('dashboard');
+});
+
+Route::controller(MailController::class)->group(function(){
+    route::post('/input-mail', 'store')->name('input-mail');
+});
+
+// route::controller(IncomingMailController::class)->group(function(){
+//     route::get('/IncomingMail','index');
+// });
+
+Route::controller(OutgoingMailController::class)->group(function(){
+    route::get('/OutgoingMail','index');
 });
 
 route::controller(report::class)->group(function(){

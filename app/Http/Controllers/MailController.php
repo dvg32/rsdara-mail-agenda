@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\mail;
 use App\Http\Requests\StoremailRequest;
 use App\Http\Requests\UpdatemailRequest;
+use Illuminate\Support\Carbon;
 
 class MailController extends Controller
 {
@@ -30,6 +31,20 @@ class MailController extends Controller
     public function store(StoremailRequest $request)
     {
         //
+        // dd($request);
+        $validatedData = $request->validate([
+            'mail_code' => 'required',
+            'mail_from' => 'required',
+            'mail_subject' => 'required',
+            'mail_number' => 'required',
+            'mail_date' => 'required',
+            'document_location' => 'required',
+            'mail_type' => 'required',
+        ]);
+        $validatedData['input_date'] = Carbon::now();
+        $validatedData['status'] = 1;
+        mail::create($validatedData);
+        return redirect()->route('dashboard')->with('success', 'Data Surat Berhasil Diinputkan!');
     }
 
     /**

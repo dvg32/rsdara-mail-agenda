@@ -20,25 +20,25 @@
                                 <!--begin::Select-->
                                 <select name="status" data-control="select2" data-hide-search="true"
                                     class="form-select form-select-solid form-select-sm fw-bolder w-100px">
-                            
+
                                     @php
                                         $currentYear = date('Y');
                                     @endphp
-                            
+
                                     {{-- Display options for the current year and the three previous years --}}
                                     @for ($i = 0; $i < 4; $i++)
                                         @php
                                             $year = $currentYear - $i;
                                             $quarter = 1; // You can customize this if needed
                                         @endphp
-                            
+
                                         {{-- Output the option --}}
                                         <option value="{{ $year }}">{{ $year }}</option>
-                                    @endfor                            
+                                    @endfor
                                 </select>
                                 <!--end::Select-->
                             </div>
-                            
+
                             <!--end::Card toolbar-->
                         </div>
                         <!--end::Card header-->
@@ -192,7 +192,7 @@
                                         No
                                     </th>
                                     <th class="min-w-150px">Asal Dan Perihal Surat</th>
-                                    <th class="min-w-140px">No Dan Tanggal Surat</th>                                    
+                                    <th class="min-w-140px">No Dan Tanggal Surat</th>
                                     <th class="min-w-120px">Status Surat</th>
                                     <th class="min-w-100px text-end">Actions</th>
                                 </tr>
@@ -208,7 +208,7 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-muted fw-bold text-muted d-block fs-7">Dari Mana Saja </a>
+                                                <a href="#" class="text-muted fw-bold text-muted d-block fs-7">{{ $Mail->mail_from }}</a>
                                                 <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->mail_subject}}</span>
                                             </div>
                                         </div>
@@ -216,20 +216,20 @@
                                     <td>
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#"
-                                                class="text-muted fw-bold text-muted d-block fs-7">{{$Mail->mail_code}}</a>
+                                                class="text-muted fw-bold text-muted d-block fs-7">{{$Mail->mail_number}}</a>
                                             <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->input_date}}</span>
                                     </td>
                                     <td>
                                         @if ($Mail->mail_type == 1)
                                         <div class="d-flex justify-content-start flex-column">
-                                            <span class="badge rounded-pill bg-info fs-8 fw-bolder">Surat Masuk</span> 
-                                        </div>    
+                                            <span class="badge rounded-pill bg-info fs-8 fw-bolder">Surat Masuk</span>
+                                        </div>
                                         @else
                                         <div class="d-flex justify-content-start flex-column">
-                                            <span class="badge rounded-pill bg-warning fs-8 fw-bolder">Surat Keluar</span> 
+                                            <span class="badge rounded-pill bg-warning fs-8 fw-bolder">Surat Keluar</span>
                                         </div>
-                                        @endif                                        
-                                    </td>                                   
+                                        @endif
+                                    </td>
                                     <td>
                                         <div class="d-flex justify-content-end flex-shrink-0">
                                             <a href="#"
@@ -287,13 +287,13 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                                
+
                             </tbody>
                             <!--end::Table body-->
                         </table>
                         {{-- {{$Mail->links() }} --}}
                     </div>
-                    
+
                     <!--end::Table container-->
                 </div>
                 <!--begin::Body-->
@@ -306,8 +306,9 @@
                         <!--begin::Modal content-->
                         <div class="modal-content">
                             <!--begin::Form-->
-                            <form class="form" action="#" id="kt_modal_add_customer_form"
-                                data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+                            <form class="form" action="{{ route('input-mail') }}" id="kt_modal_add_customer_form"
+                                data-kt-redirect="../../demo1/dist/apps/customers/list.html" method="POST">
+                                @csrf
                                 <!--begin::Modal header-->
                                 <div class="modal-header" id="kt_modal_add_customer_header">
                                     <!--begin::Modal title-->
@@ -349,7 +350,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input class="form-control form-control-solid"
-                                                    placeholder="Contoh : B1200" name="" />
+                                                    placeholder="Contoh : B1200" name="mail_code" />
                                                 <!--end::Input-->
                                             </div>
                                             <!--end::Col-->
@@ -359,12 +360,12 @@
                                                 <label class="required fs-6 fw-bold mb-2">Jenis Surat</label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <select name="country" aria-label="Jenis Surat" data-control="select2"
+                                                <select name="mail_type" aria-label="Jenis Surat" data-control="select2"
                                                     data-placeholder="Jenis Surat" data-dropdown-parent="#AddMail"
                                                     class="form-select form-select-solid fw-bolder">
                                                     <option value="">Jenis Surat</option>
-                                                    <option >Surat Masuk</option>
-                                                    <option >Surat Keluar</option>
+                                                    <option value="1">Surat Masuk</option>
+                                                    <option value="2">Surat Keluar</option>
                                                 </select>
                                                 <!--end::Input-->
                                             </div>
@@ -377,7 +378,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" class="form-control form-control-solid"
-                                                    placeholder="" name=""  />
+                                                    placeholder="" name="mail_number"  />
                                                 <!--end::Input-->
                                             </div>
                                             <!--begin::Input group-->
@@ -387,7 +388,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" class="form-control form-control-solid"
-                                                    placeholder="" name="" id="TanggalSuratMasuk"  />
+                                                    placeholder="" name="mail_date" id="TanggalSuratMasuk"  />
                                                 <!--end::Input-->
                                             </div>
                                             <div class="fv-row mb-1">
@@ -396,7 +397,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" class="form-control form-control-solid"
-                                                    placeholder="" name=""  />
+                                                    placeholder="" name="mail_from"  />
                                                 <!--end::Input-->
                                             </div>
                                             <div class="fv-row mb-1">
@@ -405,7 +406,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" class="form-control form-control-solid"
-                                                    placeholder="" name="">
+                                                    placeholder="" name="mail_subject">
                                                 <!--end::Input-->
                                             </div>
                                             <div class="fv-row mb-1">
@@ -414,7 +415,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" class="form-control form-control-solid"
-                                                    placeholder="" name=""  />
+                                                    placeholder="" name="document_location"  />
                                                 <!--end::Input-->
                                             </div>
                                         </div>
