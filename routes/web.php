@@ -32,14 +32,6 @@ Route::controller(HospitalProfileController::class)->group(function(){
     route::get('/DashboardProfile','index');
 });
 
-route::controller(IncomingMailController::class)->group(function(){
-    route::get('/IncomingMail','index');
-});
-
-Route::controller(OutgoingMailController::class)->group(function(){
-    route::get('/OutgoingMail','index');
-});
-
 route::controller(report::class)->group(function(){
     route::get('/Report','index');
 });
