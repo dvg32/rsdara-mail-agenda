@@ -32,6 +32,7 @@ route::controller(User::class)->group(function(){
 
 Route::controller(HospitalProfileController::class)->group(function(){
     route::get('/DashboardProfile','index')->name('dashboard');
+    route::get('/incomingMail', 'incomingMail')->name('incomingMail');
 });
 
 Route::controller(MailController::class)->group(function(){
@@ -42,9 +43,9 @@ Route::controller(MailController::class)->group(function(){
 //     route::get('/IncomingMail','index');
 // });
 
-Route::controller(OutgoingMailController::class)->group(function(){
-    route::get('/OutgoingMail','index');
-});
+// Route::controller(OutgoingMailController::class)->group(function(){
+//     route::get('/OutgoingMail','index');
+// });
 
 route::controller(report::class)->group(function(){
     route::get('/Report','index');
