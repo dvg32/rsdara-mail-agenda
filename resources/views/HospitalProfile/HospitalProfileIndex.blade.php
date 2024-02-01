@@ -184,9 +184,6 @@
                     <!--begin::Table container-->
                     <div class="table-responsive">
                         <!--begin::Table-->
-                        @php
-                            $n = 1;
-                        @endphp
                         <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
                             <!--begin::Table head-->
                             <thead>
@@ -206,8 +203,7 @@
                                 @foreach ($allMail as $omail)
                                 <tr>
                                     <td>
-                                        {{-- {{ $loop->iteration }} --}}
-                                        {{ $n++; }}
+                                        {{ $loop->iteration }}
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
