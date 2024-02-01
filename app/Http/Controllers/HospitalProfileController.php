@@ -15,7 +15,7 @@ class HospitalProfileController extends Controller
     public function index()
     {
         return view('HospitalProfile.HospitalProfileIndex',[
-            'Mail' => mail::paginate(100),
+            'allMail' => mail::paginate(100),
             'mailCount' =>Mail::count(),
             'MailIn' => Mail::where('mail_type', 1)->count(),
             'MailOut' => Mail::where('mail_type', 2)->count(),
@@ -25,6 +25,14 @@ class HospitalProfileController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
+    public function incomingMail()
+    {
+        return view('IncomingMail.IncomingMail', [
+            'Mail' => mail::where('mail_type', 1)->get(),
+        ]);
+    }
+
     public function create()
     {
         //
