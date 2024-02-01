@@ -12,7 +12,7 @@
                 <div class="aside-logo flex-column-auto" id="kt_aside_logo">
                     <!--begin::Logo-->
                     <a href="">
-                        <img alt="Logo" src="{{ asset('assets/media/logos/logo-demo13.svg') }}" class="h-15px logo" />
+                        <img alt="Logo" src="{{ asset('assets/media/logos/dara.png') }}" class="h-35px logo" />
                     </a>
                     <!--end::Logo-->
                     <!--begin::Aside toggler-->
@@ -61,7 +61,7 @@
                                     </a>
                                 </div>
                                 <div class="menu-item">
-                                    <a class="menu-link {{ Request::is('IncomingMail')?'active' : '' }}" href="/IncomingMail">
+                                    <a class="menu-link {{ Request::is('IncomingMail')?'active' : '' }}" href="{{ route('incomingMail') }}">
                                         <span class="menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope-arrow-down" viewBox="0 0 16 16">
                                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4.5a.5.5 0 0 1-1 0V5.383l-7 4.2-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h5.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-1.99zm1 7.105 4.708-2.897L1 5.383zM1 4v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"/>
@@ -148,7 +148,7 @@
                                     </div>
                                 </div>
                             {{-- @else --}}
-                               
+
                             {{-- @endif --}}
                         </div>
                         <!--end::Menu-->
