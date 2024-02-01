@@ -184,6 +184,9 @@
                     <!--begin::Table container-->
                     <div class="table-responsive">
                         <!--begin::Table-->
+                        @php
+                            $n = 1;
+                        @endphp
                         <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
                             <!--begin::Table head-->
                             <thead>
@@ -200,27 +203,28 @@
                             <!--end::Table head-->
                             <!--begin::Table body-->
                             <tbody>
-                                @foreach ($Mail as $Mail)
+                                @foreach ($allMail as $omail)
                                 <tr>
                                     <td>
-                                        {{ $loop->iteration }}
+                                        {{-- {{ $loop->iteration }} --}}
+                                        {{ $n++; }}
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-muted fw-bold text-muted d-block fs-7">{{ $Mail->mail_from }}</a>
-                                                <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->mail_subject}}</span>
+                                                <a href="#" class="text-muted fw-bold text-muted d-block fs-7">{{ $omail->mail_from }}</a>
+                                                <span class="text-dark fw-bolder text-hover-primary fs-6">{{$omail->mail_subject}}</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#"
-                                                class="text-muted fw-bold text-muted d-block fs-7">{{$Mail->mail_number}}</a>
-                                            <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->input_date}}</span>
+                                                class="text-muted fw-bold text-muted d-block fs-7">{{$omail->mail_number}}</a>
+                                            <span class="text-dark fw-bolder text-hover-primary fs-6">{{$omail->input_date}}</span>
                                     </td>
                                     <td>
-                                        @if ($Mail->mail_type == 1)
+                                        @if ($omail->mail_type == 1)
                                         <div class="d-flex justify-content-start flex-column">
                                             <span class="badge rounded-pill bg-info fs-8 fw-bolder">Surat Masuk</span>
                                         </div>
@@ -291,7 +295,7 @@
                             </tbody>
                             <!--end::Table body-->
                         </table>
-                        {{-- {{$Mail->links() }} --}}
+                        {{$allMail->links() }}
                     </div>
 
                     <!--end::Table container-->
