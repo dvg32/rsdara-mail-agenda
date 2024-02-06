@@ -29,7 +29,14 @@ class HospitalProfileController extends Controller
     public function incomingMail()
     {
         return view('IncomingMail.IncomingMail', [
-            'Mail' => mail::where('mail_type', 1)->get(),
+            'Mail' => mail::where('mail_type', 1)->orderBy('mail_date', 'desc')->get(),
+        ]);
+    }
+
+    public function outgoingMail()
+    {
+        return view('OutgoingMail.OutgoingMail', [
+            'Mail' => mail::where('mail_type', 2)->orderBy('mail_date', 'desc')->get(),
         ]);
     }
 
