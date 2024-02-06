@@ -33,6 +33,7 @@ route::controller(User::class)->group(function(){
 Route::controller(HospitalProfileController::class)->group(function(){
     route::get('/','index')->name('dashboard');
     route::get('/incomingMail', 'incomingMail')->name('incomingMail');
+    route::get('/outgoingMail', 'outgoingMail')->name('outgoingMail');
 });
 
 Route::controller(MailController::class)->group(function(){
