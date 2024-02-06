@@ -22,16 +22,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 route::controller(User::class)->group(function(){
     route::get('/login','Login');
 });
 
 Route::controller(HospitalProfileController::class)->group(function(){
-    route::get('/DashboardProfile','index')->name('dashboard');
+    route::get('/','index')->name('dashboard');
     route::get('/incomingMail', 'incomingMail')->name('incomingMail');
 });
 
