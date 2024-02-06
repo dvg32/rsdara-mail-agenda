@@ -67,7 +67,7 @@
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#"
                                                 class="text-muted fw-bold text-muted d-block fs-7">{{$Mail->mail_number}}</a>
-                                            <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->input_date}}</span>
+                                            <span class="text-dark fw-bolder text-hover-primary fs-6">{{$Mail->mail_date}}</span>
                                     </td>
                                     <td>
                                         @if ($Mail->mail_type == 1)
