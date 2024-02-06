@@ -15,7 +15,7 @@ class HospitalProfileController extends Controller
     public function index()
     {
         return view('HospitalProfile.HospitalProfileIndex',[
-            'allMail' => mail::paginate(100),
+            'allMail' => mail::orderBy('mail_date', 'desc')->paginate(100),
             'mailCount' =>Mail::count(),
             'MailIn' => Mail::where('mail_type', 1)->count(),
             'MailOut' => Mail::where('mail_type', 2)->count(),
