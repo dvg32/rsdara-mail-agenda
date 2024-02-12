@@ -226,7 +226,7 @@
                                         </div>
                                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                                             style="margin-left: 5%">
-                                            <form action="/logout" method="post">
+                                            <form action="{{ route('logout') }}" method="post">
                                                 @csrf
                                                 <button type="submit"
                                                     class="btn btn-icon btn-outline-danger btn-active-danger"
@@ -261,7 +261,7 @@
                                                     <!--begin::Username-->
                                                     <div class="d-flex flex-column">
                                                         <div class="fw-bolder d-flex align-items-center fs-5">
-                                                            {{-- {{ auth()->user()->pegawai->nama }} --}}
+                                                            {{ auth()->user()->name }}
                                                             <span>
                                                         </div>
 
