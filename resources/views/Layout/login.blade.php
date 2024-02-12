@@ -13,10 +13,10 @@
             <!--begin::Wrapper-->
             <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                 <!--begin::Form-->
-                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="" method="post">
+                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="{{ route('authentication') }}" method="post">
                     @csrf
                     <!--begin::Heading-->
-                    
+
                     <!--begin::Heading-->
                     <!--begin::Input group-->
                     <div class="fv-row mb-10">
@@ -24,7 +24,7 @@
                         <label class="form-label fs-6 fw-bolder text-dark">Username</label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-lg form-control-solid" type="text" name="username" autocomplete="off" />
+                        <input class="form-control form-control-lg form-control-solid" type="text" name="name" autocomplete="off" />
                         <!--end::Input-->
                     </div>
                     <!--end::Input group-->
@@ -36,7 +36,7 @@
                             <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
                             <!--end::Label-->
                             <!--begin::Link-->
-                           
+
                             <!--end::Link-->
                         </div>
                         <!--end::Wrapper-->
@@ -62,7 +62,7 @@
             </div>
             <!--end::Wrapper-->
         </div>
-        <!--end::Content-->        
+        <!--end::Content-->
     </div>
     <!--end::Authentication - Sign-in-->
 </div>
