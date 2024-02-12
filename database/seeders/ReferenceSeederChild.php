@@ -15,10 +15,10 @@ class ReferenceSeederChild extends Seeder
     {
         //
         $parent_id_email = reference::where('description', 'Jenis Email')->first();
-        $parent_id_gender = reference::where('description', 'Jenis Kelamin');
-        $parent_id_work_unit = reference::where('description', 'Unit Kerja');
-        $parent_id_job_title = reference::where('description', 'Jabatan');
-        $parent_id_education = reference::where('description', 'Pendidikan');
+        $parent_id_gender = reference::where('description', 'Jenis Kelamin')->first();
+        $parent_id_work_unit = reference::where('description', 'Unit Kerja')->first();
+        $parent_id_job_title = reference::where('description', 'Jabatan')->first();
+        $parent_id_education = reference::where('description', 'Pendidikan')->first();
 
         reference::create(['parent_id' => $parent_id_email->id,'description' => 'Surat Masuk', 'status' => 1]);
         reference::create(['parent_id' => $parent_id_email->id,'description' => 'Surat Keluar', 'status' => 1]);
