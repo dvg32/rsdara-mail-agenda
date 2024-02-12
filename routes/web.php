@@ -34,6 +34,7 @@ Route::controller(HospitalProfileController::class)->group(function(){
 
 Route::controller(MailController::class)->group(function(){
     route::post('/input-mail', 'store')->name('input-mail')->middleware((['auth','AppUserAuth']));
+    route::get('/mail-data', 'getMonthlyData')->name('mail-data');
 });
 
 route::controller(report::class)->group(function(){
@@ -46,5 +47,6 @@ route::controller(ReferenceController::class)->group(function(){
 
 route::controller(AuthController::class)->group(function(){
     route::get('/login', 'Login')->name('login');
+    route::post('/authentication', 'authentication')->name('authentication');
     route::post('/logout', 'Logout')->name('logout')->middleware('auth');
 });
