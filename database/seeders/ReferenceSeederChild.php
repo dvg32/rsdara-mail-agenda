@@ -112,5 +112,37 @@ class ReferenceSeederChild extends Seeder
         reference::create(['parent_id' => $parent_id_job_title->id,'description' => 'Pengadministrasion Gudang Alkes', 'status' => 1]);
         reference::create(['parent_id' => $parent_id_job_title->id,'description' => 'Penginventaris Barang dan ATK', 'status' => 1]);
         reference::create(['parent_id' => $parent_id_job_title->id,'description' => 'Pengadministrasian Gas Medis', 'status' => 1]);
+
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Terapan Akuntasi', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Ilmu Komputer', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Informatika', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Administrasi Negara', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Ilmu Pemerintahan', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Ilmu Administrasi Negara', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Pendidikan', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Manajemen', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Hukum', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Pendidikan Agama Islam', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Kehutanan', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Ekonomi', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Farmasi', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Keperawatan', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'S1 Pertanian', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'DIII Akuntansi', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'DIII Administrasi', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'DIII Sekretaris', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'DII', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SMA', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SLTA', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'Paket C', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SMK', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SMU', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'MAN', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SMK Komputer', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SMK Kesehatan', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SMK Farmasi', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'STM', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'SMEA', 'status' => 1]);
+        reference::create(['parent_id' => $parent_id_education->id, 'description' => 'PAKET C (SMA)', 'status' => 1]);
     }
 }
