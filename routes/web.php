@@ -1,14 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HospitalProfileController;
-use App\Http\Controllers\IncomingMailController;
 use App\Http\Controllers\MailController;
-use App\Http\Controllers\OutgoingMailController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\report;
-use App\Http\Controllers\User;
-use App\Models\mail;
-use App\Models\reference;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,32 +22,29 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-route::controller(User::class)->group(function(){
-    route::get('/login','Login');
-});
+// route::controller(User::class)->group(function(){
+//     route::get('/login','Login');
+// });
 
 Route::controller(HospitalProfileController::class)->group(function(){
-    route::get('/','index')->name('dashboard');
-    route::get('/incomingMail', 'incomingMail')->name('incomingMail');
-    route::get('/outgoingMail', 'outgoingMail')->name('outgoingMail');
+    route::get('/','index')->name('dashboard')->middleware((['auth','AppUserAuth']));
+    route::get('/incomingMail', 'incomingMail')->name('incomingMail')->middleware((['auth','AppUserAuth']));
+    route::get('/outgoingMail', 'outgoingMail')->name('outgoingMail')->middleware((['auth','AppUserAuth']));
 });
 
 Route::controller(MailController::class)->group(function(){
-    route::post('/input-mail', 'store')->name('input-mail');
+    route::post('/input-mail', 'store')->name('input-mail')->middleware((['auth','AppUserAuth']));
 });
 
-// route::controller(IncomingMailController::class)->group(function(){
-//     route::get('/IncomingMail','index');
-// });
-
-// Route::controller(OutgoingMailController::class)->group(function(){
-//     route::get('/OutgoingMail','index');
-// });
-
 route::controller(report::class)->group(function(){
-    route::get('/Report','index');
+    route::get('/Report','index')->middleware((['auth','AppUserAuth']));
 });
 
 route::controller(ReferenceController::class)->group(function(){
-    route::get('/Reference','index');
+    route::get('/Reference','index')->middleware((['auth','AppUserAuth']));
+});
+
+route::controller(AuthController::class)->group(function(){
+    route::get('/login', 'Login')->name('login');
+    route::post('/logout', 'Logout')->name('logout')->middleware('auth');
 });
