@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\mail;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoremailRequest;
 use App\Http\Requests\UpdatemailRequest;
-use Illuminate\Support\Carbon;
 
 class MailController extends Controller
 {
@@ -77,5 +78,14 @@ class MailController extends Controller
     public function destroy(mail $mail)
     {
         //
+    }
+
+    public function getMonthlyData()
+    {
+        $monthlyData = mail::select(DB::raw('MONTH(mail_date) as month'), DB::raw('COUNT(*) as count'), 'mail_type')
+            ->groupBy(DB::raw('MONTH(mail_date)'), 'mail_type')
+            ->get();
+        return view('HospitalProfile.mail_data2', compact('monthlyData'));
+
     }
 }
