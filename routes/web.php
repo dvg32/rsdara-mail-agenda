@@ -30,6 +30,11 @@ Route::controller(HospitalProfileController::class)->group(function(){
     route::get('/','index')->name('dashboard')->middleware((['auth','AppUserAuth']));
     route::get('/incomingMail', 'incomingMail')->name('incomingMail')->middleware((['auth','AppUserAuth']));
     route::get('/outgoingMail', 'outgoingMail')->name('outgoingMail')->middleware((['auth','AppUserAuth']));
+    route::get('/mail-data', 'getMonthlyData')->name('mail-data')->middleware('auth', 'AppUserAuth');
+});
+
+Route::controller(report::class)->group(function(){
+    route::get('/data-graph', 'dataGraph')->name('data-graph')->middleware('auth', 'AppUserAuth');
 });
 
 Route::controller(MailController::class)->group(function(){
