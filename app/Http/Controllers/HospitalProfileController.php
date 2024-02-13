@@ -84,4 +84,5 @@ class HospitalProfileController extends Controller
     {
         //
     }
+
 }
