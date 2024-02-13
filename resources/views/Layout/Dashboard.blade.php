@@ -83,7 +83,7 @@
                                     </a>
                                 </div>
                                 <div class="menu-item">
-                                    <a class="menu-link {{ Request::is('Report')?'active' : '' }}" href="/Report">
+                                    <a class="menu-link {{ Request::is('Report')?'active' : '' }}" href="{{ route('data-graph') }}">
                                         <span class="menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
                                                 <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"/>
