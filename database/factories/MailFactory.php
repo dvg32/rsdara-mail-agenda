@@ -30,7 +30,7 @@ class MailFactory extends Factory
             'mail_from' => fake()->company().' - '.fake()->name(),
             'mail_subject' => fake()->catchPhrase(),
             'mail_number' => 'RSDARA/MAIL/'.fake()->randomNumber(4, false).'/'.Carbon::now()->format('m').'/'.Carbon::now()->format('Y'),
-            'mail_date' => Carbon::now()->subDays(rand(1, 61)),
+            'mail_date' => Carbon::now()->subDays(rand(1, 400)),
             // 'mail_date' => Carbon::now(),
             'document_location' => 'https://bit.ly/'.Str::random(6),
             'mail_type' => fake()->randomElement([1, 2]),
