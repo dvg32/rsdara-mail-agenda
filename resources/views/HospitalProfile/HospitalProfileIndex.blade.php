@@ -116,8 +116,8 @@
 
                         // Define colors for each mail type
                         var colors = {
-                            '1': '#36a2eb', // Surat Masuk
-                            '2': '#ff6384', // Surat Keluar
+                            '1': '#00A3FF', // Surat Masuk
+                            '2': '#50CD89', // Surat Keluar
                         };
 
                         // Define fonts
