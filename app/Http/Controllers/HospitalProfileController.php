@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\mail;
+use Illuminate\Support\Carbon;
 use App\Models\hospital_profile;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Storehospital_profileRequest;
 use App\Http\Requests\Updatehospital_profileRequest;
 
@@ -14,11 +16,18 @@ class HospitalProfileController extends Controller
      */
     public function index()
     {
+        $year = Carbon::now()->format('Y');
+        $monthlyData = mail::select(DB::raw('MONTH(mail_date) as month'), DB::raw('COUNT(*) as count'), 'mail_type')
+            ->whereYear('mail_date', $year)
+            ->groupBy(DB::raw('MONTH(mail_date)'), 'mail_type')
+            ->get();
         return view('HospitalProfile.HospitalProfileIndex',[
             'allMail' => mail::orderBy('mail_date', 'desc')->paginate(100),
-            'mailCount' =>Mail::count(),
-            'MailIn' => Mail::where('mail_type', 1)->count(),
-            'MailOut' => Mail::where('mail_type', 2)->count(),
+            'mailCount' =>Mail::whereYear('mail_date', $year)->count(),
+            'MailIn' => Mail::where('mail_type', 1)->whereYear('mail_date', $year)->count(),
+            'MailOut' => Mail::where('mail_type', 2)->whereYear('mail_date', $year)->count(),
+            'monthlyData' => $monthlyData,
+            'graph_year' => $year,
         ]);
     }
 
