@@ -94,7 +94,7 @@
                                         <span class="menu-title">Laporan</span>
                                     </a>
                                 </div> --}}
-                                <div class="menu-item">
+                                {{-- <div class="menu-item">
                                     <a class="menu-link {{ Request::is('Reference')?'active' : '' }}" href="/Reference">
                                         <span class="menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16">
@@ -105,9 +105,9 @@
                                         </span>
                                         <span class="menu-title">Kode Klasifikasi</span>
                                     </a>
-                                </div>
+                                </div> --}}
 
-                                <div class="menu-item">
+                                {{-- <div class="menu-item">
                                     <div class="menu-content pt-8 pb-2">
                                         <span class="menu-section text-muted text-uppercase fs-8 ls-1">Master</span>
                                     </div>
@@ -146,7 +146,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             {{-- @else --}}
 
                             {{-- @endif --}}
