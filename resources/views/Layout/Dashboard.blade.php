@@ -82,7 +82,7 @@
                                         <span class="menu-title">Surat Keluar</span>
                                     </a>
                                 </div>
-                                <div class="menu-item">
+                                {{-- <div class="menu-item">
                                     <a class="menu-link {{ Request::is('Report')?'active' : '' }}" href="{{ route('data-graph') }}">
                                         <span class="menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
@@ -93,7 +93,7 @@
                                         </span>
                                         <span class="menu-title">Laporan</span>
                                     </a>
-                                </div>
+                                </div> --}}
                                 <div class="menu-item">
                                     <a class="menu-link {{ Request::is('Reference')?'active' : '' }}" href="/Reference">
                                         <span class="menu-icon">
