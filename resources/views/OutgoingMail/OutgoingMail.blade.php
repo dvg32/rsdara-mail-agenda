@@ -213,8 +213,8 @@
                                                 <select name="mail_type" aria-label="Jenis Surat" data-control="select2"
                                                     data-placeholder="Jenis Surat" data-dropdown-parent="#AddMail"
                                                     class="form-select form-select-solid fw-bolder">
-                                                    <option value="">Jenis Surat</option>
-                                                    <option value="1">Surat Masuk</option>
+                                                    {{-- <option value="">Jenis Surat</option>
+                                                    <option value="1">Surat Masuk</option> --}}
                                                     <option value="2">Surat Keluar</option>
                                                 </select>
                                                 <!--end::Input-->
