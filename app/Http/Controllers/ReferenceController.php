@@ -16,6 +16,11 @@ class ReferenceController extends Controller
         return view('Reference.Reference');
     }
 
+    public function panduanSurat()
+    {
+        return view('Reference.MailGuide');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
