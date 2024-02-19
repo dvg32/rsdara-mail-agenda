@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\reference;
 use App\Http\Requests\StorereferenceRequest;
 use App\Http\Requests\UpdatereferenceRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ReferenceController extends Controller
 {
@@ -19,6 +20,20 @@ class ReferenceController extends Controller
     public function panduanSurat()
     {
         return view('Reference.MailGuide');
+    }
+
+    public function dataPanduanSurat()
+    {
+        $path = public_path('assets/pdf/panduan.pdf');
+
+        if (!file_exists($path)) {
+            # code...
+            abort(404, 'FIle not found');
+        }
+
+        $content = file_get_contents($path);
+
+        return response($content)->header('Content-Type', 'application/pdf');
     }
 
     /**
