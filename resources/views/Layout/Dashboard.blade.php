@@ -45,7 +45,7 @@
                             id="#kt_aside_menu" data-kt-menu="true">
                             <div class="menu-item">
                                 <div class="menu-content pb-2">
-                                    <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+                                    <span class="menu-section text-muted text-uppercase fs-8 ls-1">Beranda</span>
                                 </div>
                             </div>
                             {{-- @if (Auth()->user()->hak_akses != 2) --}}
@@ -57,7 +57,7 @@
                                                 <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514"/>
                                               </svg>
                                         </span>
-                                        <span class="menu-title">Dashboard</span>
+                                        <span class="menu-title">Beranda</span>
                                     </a>
                                 </div>
                                 <div class="menu-item">
@@ -94,18 +94,17 @@
                                         <span class="menu-title">Laporan</span>
                                     </a>
                                 </div> --}}
-                                {{-- <div class="menu-item">
-                                    <a class="menu-link {{ Request::is('Reference')?'active' : '' }}" href="/Reference">
+                                <div class="menu-item">
+                                    <a class="menu-link {{ Request::is('MailGuide')?'active' : '' }}" href="{{ route('mail-guide') }}">
                                         <span class="menu-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708m-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708"/>
-                                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
-                                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                                                <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                                                <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
                                               </svg>
                                         </span>
-                                        <span class="menu-title">Kode Klasifikasi</span>
+                                        <span class="menu-title">Panduan Surat Menyurat</span>
                                     </a>
-                                </div> --}}
+                                </div>
 
                                 {{-- <div class="menu-item">
                                     <div class="menu-content pt-8 pb-2">
