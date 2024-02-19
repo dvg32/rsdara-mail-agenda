@@ -49,6 +49,7 @@ route::controller(report::class)->group(function(){
 route::controller(ReferenceController::class)->group(function(){
     route::get('/Reference','index')->middleware((['auth','AppUserAuth']));
     route::get('/mail-guide','panduanSurat')->name('mail-guide')->middleware((['auth','AppUserAuth']));
+    route::get('/mail-guide-data','dataPanduanSurat')->name('mail-guide-data')->middleware((['auth','AppUserAuth']));
 });
 
 route::controller(AuthController::class)->group(function(){
