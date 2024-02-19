@@ -1,5 +1,5 @@
 @extends('Layout.Dashboard')
-@section('DASHBOARD')
+@section('DASHBOARD2')
     <div class="app-main flex-column flex-row-fluid">
         <!--begin::Container-->
         <div id="kt_content_container" class="container-fluid">
