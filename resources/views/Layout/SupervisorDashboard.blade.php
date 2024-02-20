@@ -94,7 +94,7 @@
                                         <span class="menu-title">Laporan</span>
                                     </a>
                                 </div> --}}
-                                {{-- <div class="menu-item">
+                                <div class="menu-item">
                                     <a class="menu-link {{ Request::is('MailGuide')?'active' : '' }}" href="{{ route('mail-guide') }}">
                                         <span class="menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
@@ -104,7 +104,7 @@
                                         </span>
                                         <span class="menu-title">Panduan Surat Menyurat</span>
                                     </a>
-                                </div> --}}
+                                </div>
 
                                 {{-- <div class="menu-item">
                                     <div class="menu-content pt-8 pb-2">
