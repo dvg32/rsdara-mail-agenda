@@ -31,6 +31,23 @@ class HospitalProfileController extends Controller
         ]);
     }
 
+    public function supervisorIndex()
+    {
+        $year = Carbon::now()->format('Y');
+        $monthlyData = mail::select(DB::raw('MONTH(mail_date) as month'), DB::raw('COUNT(*) as count'), 'mail_type')
+            ->whereYear('mail_date', $year)
+            ->groupBy(DB::raw('MONTH(mail_date)'), 'mail_type')
+            ->get();
+        return view('HospitalProfile.SupervisorIndex',[
+            'allMail' => mail::orderBy('mail_date', 'desc')->paginate(100),
+            'mailCount' =>Mail::whereYear('mail_date', $year)->count(),
+            'MailIn' => Mail::where('mail_type', 1)->whereYear('mail_date', $year)->count(),
+            'MailOut' => Mail::where('mail_type', 2)->whereYear('mail_date', $year)->count(),
+            'monthlyData' => $monthlyData,
+            'graph_year' => $year,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
