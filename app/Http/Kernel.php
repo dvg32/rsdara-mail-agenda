@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'AppUserAuth' => \App\Http\Middleware\AppUserAuth::class,
         'AppAdminAuth' => \App\Http\Middleware\AppAdminAuth::class,
         'AppSupervisorAuth' => \App\Http\Middleware\AppSupervisorAuth::class,
+        'AppSupervisorUserAuth' => \App\Http\Middleware\AppSupervisorUserAuth::class,
     ];
 }
