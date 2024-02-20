@@ -36,6 +36,9 @@ class AuthController extends Controller
                 # code...
             } elseif ($validateLogin->status == '1' && $validateLogin->role == '2') {
                 # code...
+                $request->session()->regenerate();
+                Alert::Toast('Selamat Datang', 'success');
+                return redirect()->route('supervisorIndex');
             } elseif ($validateLogin->status == '1' && $validateLogin->role == '3') {
                 # code...
                 $request->session()->regenerate();
