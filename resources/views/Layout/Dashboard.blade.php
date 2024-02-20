@@ -50,7 +50,11 @@
                             </div>
                             {{-- @if (Auth()->user()->hak_akses != 2) --}}
                                 <div class="menu-item">
-                                    <a class="menu-link {{ Request::is('/')?'active' : '' }}" href="{{ route('dashboard') }}">
+                                    <a class="menu-link {{ Request::is('/')?'active' : '' }}" href="@if (Auth::user()->role==2)
+                                        {{ route('supervisorIndex') }}
+                                    @else
+                                        {{ route('dashboard') }}
+                                    @endif">
                                         <span class="menu-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-check" viewBox="0 0 16 16">
                                                 <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.708L8 2.207l-5 5V13.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 2 13.5V8.207l-.646.647a.5.5 0 1 1-.708-.708z"/>
@@ -60,6 +64,8 @@
                                         <span class="menu-title">Beranda</span>
                                     </a>
                                 </div>
+
+                                @if (Auth::user()->role == 3)
                                 <div class="menu-item">
                                     <a class="menu-link {{ Request::is('incomingMail')?'active' : '' }}" href="{{ route('incomingMail') }}">
                                         <span class="menu-icon">
@@ -82,6 +88,7 @@
                                         <span class="menu-title">Surat Keluar</span>
                                     </a>
                                 </div>
+                                @endif
                                 {{-- <div class="menu-item">
                                     <a class="menu-link {{ Request::is('Report')?'active' : '' }}" href="{{ route('data-graph') }}">
                                         <span class="menu-icon">
