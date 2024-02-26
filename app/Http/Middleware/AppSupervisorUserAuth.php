@@ -23,7 +23,7 @@ class AppSupervisorUserAuth
         //     return back();
         // }
         // return $next($request);
-        if (Auth::user()->role == 3||Auth::user()->role == 2) {
+        if (Auth::user()->role == 3||Auth::user()->role == 2||Auth::user()->role == 1) {
             # code...
             return $next($request);
         }else{
