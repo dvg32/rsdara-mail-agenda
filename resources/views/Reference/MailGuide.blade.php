@@ -1,5 +1,16 @@
-@extends('Layout.Dashboard')
-@section('DASHBOARD')
+@if (Auth::user()->role == 1)
+    @php
+        $a='admin_layout.dashboard';
+        $b='dashboard_content';
+    @endphp
+@else
+    @php
+        $a='Layout.Dashboard';
+        $b='DASHBOARD';
+    @endphp
+@endif
+@extends($a)
+@section($b)
 <div class="app-main flex-column flex-row-fluid">
     <!--begin::Container-->
     <div id="kt_content_container" class="container-fluid">
