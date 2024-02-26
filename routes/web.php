@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HospitalProfileController;
 use App\Http\Controllers\MailController;
@@ -25,6 +26,12 @@ use Illuminate\Support\Facades\Route;
 // route::controller(User::class)->group(function(){
 //     route::get('/login','Login');
 // });
+
+Route::controller(AdminController::class)->group(function(){
+    route::get('/admin_index', 'index')->name('admin_index')->middleware(['auth','AppAdminAuth']);
+    route::get('/user_management', 'user_management')->name('user_management')->middleware(['auth','AppAdminAuth']);
+    route::get('/employee_management', 'employee_management')->name('employee_management')->middleware(['auth','AppAdminAuth']);
+});
 
 Route::controller(HospitalProfileController::class)->group(function(){
     route::get('/','index')->name('dashboard')->middleware((['auth','AppUserAuth']));
