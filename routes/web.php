@@ -57,7 +57,10 @@ route::controller(report::class)->group(function(){
 route::controller(ReferenceController::class)->group(function(){
     route::get('/Reference','index')->middleware((['auth','AppUserAuth']));
     route::get('/mail-guide','panduanSurat')->name('mail-guide')->middleware((['auth','AppSupervisorUserAuth']));
-    route::get('/mail-guide-data','dataPanduanSurat')->name('mail-guide-data')->middleware((['auth','AppSupervisorUserAuth']));
+    // route::get('/mail-guide-data','dataPanduanSurat')->name('mail-guide-data')->middleware((['auth','AppSupervisorUserAuth']));
+    route::get('/dataPanduanSuratTataNaskahDinas','dataPanduanSuratTataNaskahDinas')->name('dataPanduanSuratTataNaskahDinas')->middleware((['auth','AppSupervisorUserAuth']));
+    route::get('/dataPanduanSuratPermendagri83Tahun2022','dataPanduanSuratPermendagri83Tahun2022')->name('dataPanduanSuratPermendagri83Tahun2022')->middleware((['auth','AppSupervisorUserAuth']));
+    route::get('/dataPanduanSuratPerbupNo14Tahun2018','dataPanduanSuratPerbupNo14Tahun2018')->name('dataPanduanSuratPerbupNo14Tahun2018')->middleware((['auth','AppSupervisorUserAuth']));
 });
 
 route::controller(AuthController::class)->group(function(){
