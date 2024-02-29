@@ -12,8 +12,8 @@
                 <div class="aside-logo flex-column-auto" id="kt_aside_logo">
                     <!--begin::Logo-->
                     <a href="">
-                        <img alt="Logo" src="{{ asset('assets/media/logos/dara.png') }}" class="h-35px logo" />
-                    </a>
+                        <img alt="Logo" src="{{ asset('assets/media/logos/dara-sietam.png') }}" class="h-35px logo" />
+                    </a>SI eTAM
                     <!--end::Logo-->
                     <!--begin::Aside toggler-->
                     <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle"
