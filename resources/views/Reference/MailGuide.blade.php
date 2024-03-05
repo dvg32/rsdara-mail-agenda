@@ -1,7 +1,7 @@
 @if (Auth::user()->role == 1)
     @php
-        $a='admin_layout.dashboard';
-        $b='dashboard_content';
+        $a='Layout.Dashboard';
+        $b='DASHBOARD';
     @endphp
 @else
     @php

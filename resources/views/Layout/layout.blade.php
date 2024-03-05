@@ -29,7 +29,7 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -75,11 +75,11 @@
     <script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
     <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
     <script src="{{ asset('assets/js/custom/modals/create-app.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/modals/upgrade-plan.js') }}"></script>
-    <script src="{{ asset('assets/js/UserDetail.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/modals/upgrade-plan.js') }}"></script>    
     <script src="{{ asset('assets/js/Tanggal.js') }}"></script>
     <script src="{{ asset('assets/js/NoKtp.js') }}"></script>
-    <script src="{{ asset('assets/js/project.js') }}"></script>    
+    <script src="{{ asset('assets/js/project.js') }}"></script>
+    <script src="{{asset('assets/js/PegawaiDetail.js')}}"></script>    
    
 <!--end::Body-->
 
