@@ -29,7 +29,7 @@ Route::controller(AdminController::class)->group(function(){
 });
 
 Route::controller(HospitalProfileController::class)->group(function(){
-    route::get('/','index')->middleware('auth');
+    route::get('/','index')->name('dashboard')->middleware('auth');
     route::get('/supervisorIndex','supervisorIndex')->name('supervisorIndex')->middleware('auth');
     route::get('/incomingMail', 'incomingMail')->name('incomingMail')->middleware('auth');
     route::get('/outgoingMail', 'outgoingMail')->name('outgoingMail')->middleware('auth');
