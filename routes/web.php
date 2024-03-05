@@ -59,7 +59,7 @@ route::controller(ReferenceController::class)->group(function(){
 });
 
 route::controller(AuthController::class)->group(function(){
-    route::get('/login', 'Login')->name('login')->middleware('auth');
-    route::post('/authentication', 'authentication')->name('authentication')->middleware('auth');
+    route::get('/login', 'Login')->name('login');
+    route::post('/authentication', 'authentication')->name('authentication');
     route::post('/logout', 'Logout')->name('logout')->middleware('auth');
 });
