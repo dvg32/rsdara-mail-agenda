@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\mail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\hospital_profile;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\technical_instruction;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Storehospital_profileRequest;
 use App\Http\Requests\Updatehospital_profileRequest;
 
@@ -28,6 +32,7 @@ class HospitalProfileController extends Controller
             'MailOut' => Mail::where('mail_type', 2)->whereYear('mail_date', $year)->count(),
             'monthlyData' => $monthlyData,
             'graph_year' => $year,
+            'technical_instruction' => technical_instruction::latest()->filter()->paginate(25)
         ]);
     }
 
@@ -66,49 +71,22 @@ class HospitalProfileController extends Controller
         ]);
     }
 
-    public function create()
+    public function addJuknis(Request $requst)
     {
-        //
+        $validateJuknis = $requst->validate([
+            'judul_juknis' => 'required',
+            'file_upload' => 'required',
+            'waktu_dibuat' => 'required',
+        ]);
+        $validateJuknis['employee_id'] = Auth()->user()->employee_id;
+        $validateJuknis['status'] = 1;      
+        technical_instruction::create($validateJuknis);
+        if ($validateJuknis) {
+            Alert::success('Juknis Berhasil Di tambahkan');
+        }
+        return back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Storehospital_profileRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(hospital_profile $hospital_profile)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(hospital_profile $hospital_profile)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Updatehospital_profileRequest $request, hospital_profile $hospital_profile)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(hospital_profile $hospital_profile)
-    {
-        //
-    }
+    
 
 }

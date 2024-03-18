@@ -16,13 +16,7 @@ class AppSupervisorUserAuth
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {
-        // if (Auth::user()->role != 3||Auth::user()->role != 2) {
-        //     # code...
-        //     Alert::Error('Anda Tidak Memiliki Hak kses');
-        //     return back();
-        // }
-        // return $next($request);
+    {        
         if (Auth::user()->role == 3||Auth::user()->role == 2||Auth::user()->role == 1) {
             # code...
             return $next($request);

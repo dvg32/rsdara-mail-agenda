@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(AdminController::class)->group(function(){
-    route::get('/admin_index', 'index')->name('admin_index')->middleware('auth');
-    route::get('/user_management', 'user_management')->name('user_management')->middleware('auth');
-    route::get('/employee_management', 'employee_management')->name('employee_management')->middleware('auth');
-    route::post('/addEmployee','addEmployee')->name('addEmployee')->middleware('auth');
-    route::get('/searchEmployeeUsername/{id}','searchEmployeeUsername')->name('searchEmployeeUsername')->middleware('auth');
-    route::put('/addUsername','addUsername')->name('addUsername')->middleware('auth');
+    route::get('/admin_index', 'index')->name('admin_index')->middleware('auth','AppAdminAuth');
+    route::get('/user_management', 'user_management')->name('user_management')->middleware('auth','AppAdminAuth');
+    route::get('/employee_management', 'employee_management')->name('employee_management')->middleware('auth','AppAdminAuth');
+    route::post('/addEmployee','addEmployee')->name('addEmployee')->middleware('auth','AppAdminAuth');
+    route::get('/searchEmployeeUsername/{id}','searchEmployeeUsername')->name('searchEmployeeUsername')->middleware('auth','AppAdminAuth');
+    route::put('/addUsername','addUsername')->name('addUsername')->middleware('auth','AppAdminAuth');
 });
 
 Route::controller(HospitalProfileController::class)->group(function(){
@@ -33,7 +33,8 @@ Route::controller(HospitalProfileController::class)->group(function(){
     route::get('/supervisorIndex','supervisorIndex')->name('supervisorIndex')->middleware('auth');
     route::get('/incomingMail', 'incomingMail')->name('incomingMail')->middleware('auth');
     route::get('/outgoingMail', 'outgoingMail')->name('outgoingMail')->middleware('auth');
-    route::get('/mail-data', 'getMonthlyData')->name('mail-data')->middleware('auth');
+    route::get('/mail-data', 'getMonthlyData')->name('mail-data')->middleware('auth','AppUserAuth');
+    route::post('/addJuknis','addJuknis')->name('addJuknis')->middleware('auth','AppSupervisorUserAuth');
 });
 
 Route::controller(report::class)->group(function(){
@@ -52,7 +53,6 @@ route::controller(report::class)->group(function(){
 route::controller(ReferenceController::class)->group(function(){
     route::get('/Reference','index')->name('Reference')->middleware('auth');
     route::get('/mail-guide','panduanSurat')->name('mail-guide')->middleware('auth');
-    // route::get('/mail-guide-data','dataPanduanSurat')->name('mail-guide-data')->middleware('auth');
     route::get('/dataPanduanSuratTataNaskahDinas','dataPanduanSuratTataNaskahDinas')->name('dataPanduanSuratTataNaskahDinas')->middleware('auth');
     route::get('/dataPanduanSuratPermendagri83Tahun2022','dataPanduanSuratPermendagri83Tahun2022')->name('dataPanduanSuratPermendagri83Tahun2022')->middleware('auth');
     route::get('/dataPanduanSuratPerbupNo14Tahun2018','dataPanduanSuratPerbupNo14Tahun2018')->name('dataPanduanSuratPerbupNo14Tahun2018')->middleware('auth');
