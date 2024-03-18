@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,6 +21,10 @@ class technical_instruction extends Model
         if (request('search')){
             $query->where('judul_juknis','like',''.request('search').'');
         }
+    }
+    public function getFormattedDateAttribute()
+    {
+        return Carbon::parse($this->waktu_dibuat)->isoFormat('D MMMM Y');
     }
 
 }

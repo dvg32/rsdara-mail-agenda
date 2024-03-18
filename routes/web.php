@@ -44,6 +44,7 @@ Route::controller(report::class)->group(function(){
 Route::controller(MailController::class)->group(function(){
     route::post('/input-mail', 'store')->name('input-mail')->middleware('auth');
     route::get('/mail-data', 'getMonthlyData')->name('mail-data')->middleware('auth');
+    route::get('/PetunjukTeknis','viewJuknis');
 });
 
 route::controller(report::class)->group(function(){

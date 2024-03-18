@@ -7,6 +7,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoremailRequest;
 use App\Http\Requests\UpdatemailRequest;
+use App\Models\technical_instruction;
 
 class MailController extends Controller
 {
@@ -21,14 +22,7 @@ class MailController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(StoremailRequest $request)
     {
         //
@@ -47,38 +41,14 @@ class MailController extends Controller
         mail::create($validatedData);
         return redirect()->route('dashboard')->with('success', 'Data Surat Berhasil Diinputkan!');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(mail $mail)
+    public function viewJuknis()
     {
-        //
+        return view('HospitalProfile.technical_instruction',[
+            'juknis' => technical_instruction::latest()->get()
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(mail $mail)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatemailRequest $request, mail $mail)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(mail $mail)
-    {
-        //
-    }
+    
 
     public function getMonthlyData()
     {
