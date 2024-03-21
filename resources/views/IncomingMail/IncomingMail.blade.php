@@ -10,10 +10,10 @@
                     <h3 class="card-title align-items-start flex-column">
                         <span class="card-label fw-bolder fs-3 mb-1">Surat Masuk</span>
                     </h3>
-                    <form action="">
+                    <form id="searchMail" action="{{ route('incomingMail') }}" method="GET">
                         <div class="card-toolbar">
                             <div>
-                                <input type="text" name="" value="" class="form-control"
+                                <input type="text" name="searchIncomingMail" value="" id="serachIncomingMail" class="form-control"
                                     placeholder="Cari Surat Masuk" />
                             </div>
                             <div style="margin-right: 10px">
@@ -28,6 +28,7 @@
                                     </span>
                                 </button>
                             </div>
+                        </form>
                             @if (Auth()->User()->role != 3)
                             @else
                                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -48,7 +49,7 @@
                                 </div>
                             @endif
                         </div>
-                    </form>
+
 
                 </div>
                 <!--end::Header-->
