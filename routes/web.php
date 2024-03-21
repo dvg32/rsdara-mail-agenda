@@ -35,6 +35,8 @@ Route::controller(HospitalProfileController::class)->group(function(){
     route::get('/outgoingMail', 'outgoingMail')->name('outgoingMail')->middleware('auth');
     route::get('/mail-data', 'getMonthlyData')->name('mail-data')->middleware('auth','AppUserAuth');
     route::post('/addJuknis','addJuknis')->name('addJuknis')->middleware('auth','AppSupervisorUserAuth');
+    route::get('/PetunjukTeknis','viewJuknis');
+    route::get('/searchIncomingMail', 'searchIncomingMail')->name('searchIncomingMail')->middleware('auth');
 });
 
 Route::controller(report::class)->group(function(){
@@ -44,7 +46,6 @@ Route::controller(report::class)->group(function(){
 Route::controller(MailController::class)->group(function(){
     route::post('/input-mail', 'store')->name('input-mail')->middleware('auth');
     route::get('/mail-data', 'getMonthlyData')->name('mail-data')->middleware('auth');
-    route::get('/PetunjukTeknis','viewJuknis');
 });
 
 route::controller(report::class)->group(function(){
@@ -64,3 +65,4 @@ route::controller(AuthController::class)->group(function(){
     route::post('/authentication', 'authentication')->name('authentication');
     route::post('/logout', 'Logout')->name('logout')->middleware('auth');
 });
+
