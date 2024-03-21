@@ -13,27 +13,31 @@
                         <h3 class="card-title align-items-start flex-column">
                             <span class="card-label fw-bolder fs-3 mb-1">Input Petunjuk Juknis</span>
                         </h3>
-                        <form action="">
                             <div class="card-toolbar">
-                                <div>
-                                    <input type="text" name="{{request('search')}}" value="" class="form-control"
-                                        placeholder="Cari Juknis" />
-                                </div>
-                                <div style="margin-right: 10px">
-                                    <button type="submit"
-                                        class="btn btn-icon btn-outline-warning btn-active-light-info border"
-                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cari Juknis"><span
-                                            class="indicator-label">
-                                            <span class="svg-icon svg-icon-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                                </svg>
+                                <form action="{{ route('dashboard') }}" method="GET" id="searchJuknisForm">
+                                    <div>
+                                        <input type="text" name="searchJuknis" id="searchJuknis" value="" class="form-control"
+                                            placeholder="Cari Juknis" />
+                                    </div>
+                                    <div style="margin-right: 10px">
+                                        <button type="submit"
+                                            class="btn btn-icon btn-outline-warning btn-active-light-info border"
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cari Juknis"><span
+                                                class="indicator-label">
+                                                <span class="svg-icon svg-icon-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </button>
-                                </div>
+                                        </button>
+                                    </div>
+                                </form>
+
+
+                        <form action="">
                                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
                                     data-bs-trigger="hover" title="">
                                     <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal"
@@ -50,8 +54,9 @@
                                         </span>
                                         <!--end::Svg Icon-->Input Juknis</a>
                                 </div>
-                            </div>
                         </form>
+
+                            </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
@@ -71,7 +76,7 @@
                                         <th class="min-w-120px">Oleh</th>
                                         <th class="min-w-100px text-end">Actions</th>
                                     </tr>
-                                </thead>                               
+                                </thead>
                                 <tbody>
                                     @foreach ($technical_instruction as $p)
                                         <tr>
@@ -174,7 +179,7 @@
                 {{-- End Modal Juknis --}}
             </div>
             @endif
-            
+
             <div class="card card-xl-stretch mb-5 mb-xl-8 mt-6">
                 <!--begin::Col-->
                 <div class="col-lg-12">
