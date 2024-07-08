@@ -95,7 +95,7 @@ class HospitalProfileController extends Controller
                 $query->where('mail_from', 'like', "%$keyword%")->orWhere('mail_subject', 'like', "%$keyword%")->orWhere('mail_number', 'like', "%$keyword%");
             })->get();
         } else {
-            $Mail = mail::where('mail_type', 1)->orderBy('mail_date', 'desc')->get();
+            $Mail = mail::where('mail_type', '1')->orderBy('mail_date', 'desc')->get();
         }
 
         return view('IncomingMail.IncomingMail', compact('Mail'));
@@ -109,11 +109,11 @@ class HospitalProfileController extends Controller
 
         $keyword = $request->input('searchOutgoingMail');
         if ($keyword) {
-            $Mail = mail::where('mail_type', '1')->where(function($query) use ($keyword) {
+            $Mail = mail::where('mail_type', 2)->where(function($query) use ($keyword) {
                 $query->where('mail_from', 'like', "%$keyword%")->orWhere('mail_subject', 'like', "%$keyword%")->orWhere('mail_number', 'like', "%$keyword%");
             })->get();
         } else {
-            $Mail = mail::where('mail_type', 1)->orderBy('mail_date', 'desc')->get();
+            $Mail = mail::where('mail_type', 2)->orderBy('mail_date', 'desc')->get();
         }
 
         return view('OutgoingMail.OutgoingMail', compact('Mail'));
